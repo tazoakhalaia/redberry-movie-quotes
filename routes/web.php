@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\LandingController;
 use App\Http\Controllers\AdminPageController;
+use App\Http\Controllers\CheckAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,5 @@ use App\Http\Controllers\AdminPageController;
 */
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
-Route::get('/admin', [AdminPageController::class, 'index'])->name('adminpage');
+Route::get('/admin', [AdminPageController::class, 'index'])->name('login');
+Route::name('login')->post('/login', [CheckAdminController::class, 'login']);
