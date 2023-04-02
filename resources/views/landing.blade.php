@@ -11,8 +11,8 @@
 <body class="bg-slate-700 min-h-screen flex">
 <div class="w-10 flex justify-center items-center">
     <div class="ml-2">
-        <button class="rounded-full text-white  border border-slate-100">ka</button>
-        <button class="rounded-full text-white  border border-slate-100 mt-2">en</button>
+        <button class="rounded-full text-white border border-slate-100 hover:bg-white hover:text-black">ka</button>
+        <button class="rounded-full text-white border border-slate-100 hover:bg-white hover:text-black mt-2">en</button>
     </div>
 </div>
 <div class="w-full flex justify-center items-center">
