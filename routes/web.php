@@ -20,6 +20,5 @@ use App\Http\Controllers\CrudController;
 Route::get('/', [LandingController::class, 'index'])->name('landing');
 Route::get('/admin', [AdminPageController::class, 'index'])->name('login');
 Route::name('login')->post('/login', [CheckAdminController::class, 'login']);
-//Route::get('/crud', [CrudController::class, 'index'])->name('crud');
 Route::middleware(['admin'])->group(function () {
     Route::get('/crud', [CrudController::class, 'index']);})->name('crud');
