@@ -14,7 +14,7 @@ class SessionController extends Controller
         if(Auth::attempt($credentials)) {
             return redirect('crud');
         } else {
-            return redirect('/admin')->with('error', 'Invalid email or password.');
+            return redirect('/login')->with('error', 'Invalid email or password.');
         }
     }
 }
