@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class SessionController extends Controller
 {
@@ -11,7 +12,7 @@ class SessionController extends Controller
     {
         $credentials = $request->only('email', 'password');
         if(Auth::attempt($credentials)) {
-            return redirect('/crud');
+            return redirect('crud');
         } else {
             return redirect('/admin')->with('error', 'Invalid email or password.');
         }
