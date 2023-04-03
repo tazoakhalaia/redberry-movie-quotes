@@ -22,4 +22,4 @@ Route::get('/', [LandingController::class, 'index'])->name('landing');
 Route::get('/login', [AdminController::class, 'index'])->name('login');
 Route::name('login')->post('/login', [SessionController::class, 'login']);
 Route::middleware(['admin'])->group(function () {
-    Route::get('/crud', [QuoteController::class, 'index']);})->name('crud');
+    Route::get('/quotes', [QuoteController::class, 'index']);})->name('quotes');
