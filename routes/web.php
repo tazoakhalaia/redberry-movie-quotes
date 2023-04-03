@@ -19,7 +19,7 @@ use App\Http\Controllers\QuoteController;
 */
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
-Route::get('/admin', [AdminController::class, 'index'])->name('login');
+Route::get('/login', [AdminController::class, 'index'])->name('login');
 Route::name('login')->post('/login', [SessionController::class, 'login']);
 Route::middleware(['admin'])->group(function () {
     Route::get('/crud', [QuoteController::class, 'index']);})->name('crud');
