@@ -31,7 +31,7 @@
         focus:outline-none
         focus:shadow-outline" type="password" name="password" placeholder="Password" required>
         <button class="bg-sky-700
-        text-white font-bold py-2 px-4 border
+        text-white font-bold text-sm py-2 px-4 border
         rounded uppercase" type="submit">Login</button>
     </form>
 </div>

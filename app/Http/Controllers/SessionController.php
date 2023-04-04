@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
-    public function login(Request $request)
+    public function login(LoginRequest $request) : RedirectResponse
     {
-        $credentials = $request->only('email', 'password');
-        if(Auth::attempt($credentials)) {
+        if(Auth::attempt($request->validated())) {
             return redirect('quotes');
         } else {
             return redirect('/login')->with('error', 'Invalid email or password.');
         }
     }
 
-    public function logout(Request $request) {
+    public function logout() : RedirectResponse {
         Auth::logout();
         return redirect('login');
     }
