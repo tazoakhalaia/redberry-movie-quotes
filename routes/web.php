@@ -12,7 +12,7 @@ Route::get('/', [LandingController::class, 'index'])->name('landing');
 Route::get('/login', [AdminController::class, 'index'])->name('login');
 Route::name('login')->post('/login', [SessionController::class, 'login']);
 Route::middleware(['admin'])->group(function () {
-    Route::get('/quotes', [QuoteController::class, 'index']);
+    Route::view('/quotes', 'quotes');
 })->name('quotes');
 Route::post('/logout', [SessionController::class, 'logout'])->name('logout');
 
