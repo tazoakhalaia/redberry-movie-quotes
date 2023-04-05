@@ -2,20 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\LandingController;
-use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\QuoteController;
 
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
-Route::get('/login', [AdminController::class, 'index'])->name('login');
+Route::get('/login', [SessionController::class, 'index'])->name('login');
 Route::controller(SessionController::class)->group(function (){
-    Route::name('login')->post('/login', 'login');
+    Route::post('/login', 'login')->name('login');
     Route::post('/logout', 'logout')->name('logout');
 });
 Route::middleware(['admin'])->group(function () {
-    Route::view('/quotes', 'quotes');
-})->name('quotes');
+    Route::view('/quotes', 'quotes')->name('quotes');
+});
 
 
