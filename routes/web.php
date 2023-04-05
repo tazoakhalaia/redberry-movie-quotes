@@ -2,16 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\LandingController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\QuoteController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', [LandingController::class, 'index']);
+Route::get('/', [LandingController::class, 'index'])->name('landing');
+Route::get('/login', [SessionController::class, 'index'])->name('login');
+Route::controller(SessionController::class)->group(function (){
+    Route::post('/login', 'login')->name('login');
+    Route::post('/logout', 'logout')->name('logout');
+});
+Route::middleware(['admin'])->group(function () {
+    Route::view('/quotes', 'quotes')->name('quotes');
+});
+
+
