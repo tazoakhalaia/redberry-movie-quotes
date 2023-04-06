@@ -9,16 +9,22 @@
     <title>Quotes</title>
 </head>
 <body>
+<form action="/quotes-create" method="POST">
+    @csrf
+    <x-form-inputs name="title" type="text" placeholder="Title" label="Title" />
+    <x-form-inputs name="name" type="text" placeholder="Name" label="Name" />
+    <x-button type="submit" buttonName="Create" />
+</form>
 <form action="{{ route('logout') }}" method="POST">
     @csrf
-    <button type="submit">Logout</button>
+    <x-button type="submit" buttonName="Logout" />
 </form>
 
 @foreach($quotes as $quote)
     <div class="border rounded-md p-2.5 mt-4 flex justify-between">
     <div class="flex">
-    <h1 class="font-bold">Movie Name: {{ $quote->name }}</h1>
-    <h1 class="ml-7 font-bold">Movie Title: {{ $quote->title }}</h1>
+        <h1 class="font-bold"><span class="text-red-600">Movie Name: </span> {{ $quote->name }}</h1>
+        <h1 class="ml-7 font-bold"><span class="text-red-600">Movie Title:</span> {{ $quote->title }}</h1>
     </div>
     <div class="flex">
         <a href="/quotes-delete/{{ $quote->id }}"><x-button  buttonName="DELETE" /></a>

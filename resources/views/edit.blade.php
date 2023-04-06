@@ -9,7 +9,8 @@
     <title>Edit</title>
 </head>
 <body>
-<form action="/quotes-update/{{ $quotes->id }}" method="POST">
+<form action="/quotes-update/{{ $quotes->title }}" method="POST">
+    @csrf
     @method('put')
 <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Update</label>
 <input type="text" id="small-input" class="block w-1/4
