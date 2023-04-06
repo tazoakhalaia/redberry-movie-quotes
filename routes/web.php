@@ -13,7 +13,10 @@ Route::controller(SessionController::class)->group(function (){
     Route::post('/logout', 'logout')->name('logout');
 });
 Route::middleware(['admin'])->group(function () {
-    Route::get('/quotes', [QuoteController::class, 'index'])->name('quotes');
+    Route::controller(QuoteController::class)->group(function () {
+        Route::get('/quotes', [QuoteController::class, 'index'])->name('quotes');
+        Route::get('/quotes-delete/{quotes}', [QuoteController::class, 'destroy']);
+    });
 });
 
 

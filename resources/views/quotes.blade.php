@@ -13,17 +13,18 @@
     @csrf
     <button type="submit">Logout</button>
 </form>
-<div class="flex justify-between">
+
 @foreach($quotes as $quote)
+    <div class="border rounded-md p-2.5 mt-4 flex justify-between">
     <div class="flex">
     <h1 class="font-bold">Movie Name: {{ $quote->name }}</h1>
     <h1 class="ml-7 font-bold">Movie Title: {{ $quote->title }}</h1>
     </div>
-    <div>
-        <x-button buttonName="DELETE" />
+    <div class="flex">
+        <a href="/quotes-delete/{{ $quote->id }}"><x-button  buttonName="DELETE" /></a>
         <x-button buttonName="EDIT" />
     </div>
+    </div>
 @endforeach
-</div>
 </body>
 </html>

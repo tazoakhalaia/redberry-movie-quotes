@@ -11,4 +11,9 @@ class QuoteController extends Controller
     public function index():View{
         return view('quotes', ['quotes' => Quotes::all()]);
     }
+
+    public function destroy($id){
+        Quotes::find($id)->delete();
+        return redirect('quotes');
+    }
 }
