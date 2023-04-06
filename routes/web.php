@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\LandingController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\QuoteController;
 
@@ -14,7 +13,7 @@ Route::controller(SessionController::class)->group(function (){
     Route::post('/logout', 'logout')->name('logout');
 });
 Route::middleware(['admin'])->group(function () {
-    Route::view('/quotes', 'quotes')->name('quotes');
+    Route::get('/quotes', [QuoteController::class, 'index'])->name('quotes');
 });
 
 
