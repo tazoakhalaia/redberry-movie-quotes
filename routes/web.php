@@ -14,11 +14,11 @@ Route::controller(SessionController::class)->group(function (){
 });
 Route::middleware(['admin'])->group(function () {
     Route::controller(QuoteController::class)->group(function () {
-        Route::get('/quotes', [QuoteController::class, 'index'])->name('quotes');
+        Route::get('/quotes', 'index')->name('quotes');
         Route::get('/quotes-delete/{quotes}', 'destroy')->name('quotes-delete');
         Route::get('/quotes-edit/{quotes}', 'edit')->name('edit');
-        Route::put('/quotes-update/{id}' , 'update')->name('quotes-update');
-        Route::post('/quotes-create', 'create')->name('quotes-create');
+        Route::put('/quotes-update/{quotes}' , 'update')->name('quotes-update');
+        Route::post('/quotes-create', 'store')->name('quotes-create');
     });
 });
 

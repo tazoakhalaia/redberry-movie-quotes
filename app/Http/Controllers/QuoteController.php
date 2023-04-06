@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\QuoteRequest;
 use App\Models\Quotes;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -10,26 +11,23 @@ use Illuminate\View\View;
 class QuoteController extends Controller
 {
     public function index():View{
-        return view('quotes', ['quotes' => Quotes::all()]);
+        return view('quotes', ['quote' => Quotes::all()]);
     }
 
-    public function create(Request $request) : RedirectResponse{
-        $quote = new Quotes();
-        $quote->title = $request->title;
-        $quote->name = $request->name;
-        $quote->save();
+    public function store(QuoteRequest $request) : RedirectResponse{
+        Quotes::create($request->validated());
         return redirect('quotes');
     }
-    public function destroy($id) : RedirectResponse{
-        Quotes::find($id)->delete();
+    public function destroy(Quotes $quotes) : RedirectResponse{
+        $quotes->delete();
         return redirect('quotes');
     }
 
     public function edit(Quotes $quotes) : View{
-        return view('edit', ['quotes' => $quotes]);
+        return view('editquotes', ['quote' => $quotes]);
     }
 
     public function update() : RedirectResponse{
-        return redirect()->route('quotes');
+        return redirect('quotes');
     }
 }

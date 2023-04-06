@@ -18,8 +18,8 @@
 <div class="w-full flex justify-center items-center">
     <div>
         <img src="{{ asset('images/patrick.png') }}" alt="Patrick Image">
-        <h1>{{ $quotes[0]->title }}</h1>
-        <h1>{{ $quotes[0]->name }}</h1>
+        <h1>{{ $quote[0]->title }}</h1>
+        <h1>{{ $quote[0]->name }}</h1>
     </div>
 </div>
 </body>
