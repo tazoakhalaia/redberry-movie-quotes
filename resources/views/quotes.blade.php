@@ -22,7 +22,7 @@
     </div>
     <div class="flex">
         <a href="/quotes-delete/{{ $quote->id }}"><x-button  buttonName="DELETE" /></a>
-        <x-button buttonName="EDIT" />
+        <a href="/quotes-edit/{{ $quote->id }}"><x-button buttonName="EDIT" /></a>
     </div>
     </div>
 @endforeach
