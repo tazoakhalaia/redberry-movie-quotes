@@ -9,6 +9,7 @@ use Illuminate\View\View;
 class LandingController extends Controller
 {
     public function index():View{
-        return view('landing', ['quote' => Quotes::all()]);
+        $quote = Quotes::inRandomOrder()->first();
+        return view('landing', ['quote' => $quote]);
     }
 }

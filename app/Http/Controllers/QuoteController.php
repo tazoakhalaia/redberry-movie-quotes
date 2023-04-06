@@ -15,7 +15,15 @@ class QuoteController extends Controller
     }
 
     public function store(QuoteRequest $request) : RedirectResponse{
-        Quotes::create($request->validated());
+        $image = $request->file('img');
+        $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $filename);
+        $quote = new Quotes();
+        $quote->title = $request->title;
+        $quote->name = $request->name;
+        $quote->img = $filename;
+        $quote->save();
+//        Quotes::create($request->validated());
         return redirect('quotes');
     }
     public function destroy(Quotes $quotes) : RedirectResponse{
