@@ -29,8 +29,7 @@ class QuoteController extends Controller
         return view('edit', ['quotes' => $quotes]);
     }
 
-    public function update(Request $request, Quotes $quotes){
-        $quotes->update($request->validate());
+    public function update() : RedirectResponse{
         return redirect()->route('quotes');
     }
 }

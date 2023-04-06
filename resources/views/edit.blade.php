@@ -9,15 +9,12 @@
     <title>Edit</title>
 </head>
 <body>
-<form action="/quotes-update/{{ $quotes->title }}" method="POST">
+<form action="/quotes-update/{{ $quotes->id }}" method="POST">
     @csrf
     @method('put')
-<label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Update</label>
-<input type="text" id="small-input" class="block w-1/4
-p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50
-sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700
-dark:border-gray-600 dark:placeholder-gray-400
-dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ $quotes->title }}">
+    <label for="small-input" class="block mb-2 text-lg font-medium text-emerald-400 dark:text-white">Update</label>
+    <x-editinput value="{{ $quotes->title }}"/>
+    <x-editinput value="{{ $quotes->name }}" />
 <x-button type="submit" buttonName="Update" />
 </form>
 </body>
