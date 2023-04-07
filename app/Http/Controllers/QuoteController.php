@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\QuoteRequest;
 use App\Models\Quotes;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class QuoteController extends Controller
@@ -24,6 +23,9 @@ class QuoteController extends Controller
         $quote->img = $filename;
         $quote->save();
         return redirect('quotes');
+        if (is_null($quote)){
+            return redirect('quotes')->withErrors('error');
+        }
     }
     public function destroy(Quotes $quotes) : RedirectResponse{
         $quotes->delete();
