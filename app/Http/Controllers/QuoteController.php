@@ -23,7 +23,6 @@ class QuoteController extends Controller
         $quote->name = $request->name;
         $quote->img = $filename;
         $quote->save();
-//        Quotes::create($request->validated());
         return redirect('quotes');
     }
     public function destroy(Quotes $quotes) : RedirectResponse{
@@ -35,7 +34,8 @@ class QuoteController extends Controller
         return view('editquotes', ['quote' => $quotes]);
     }
 
-    public function update() : RedirectResponse{
+    public function update(QuoteRequest $request, Quotes $quotes) : RedirectResponse{
+        $quotes->update($request->validated());
         return redirect('quotes');
     }
 }

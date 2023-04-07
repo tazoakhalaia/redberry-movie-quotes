@@ -23,7 +23,7 @@
 
 @foreach($quote as $quotes)
     <div class="border rounded-md p-2.5 mt-4 flex justify-between">
-    <div class="flex w-2/3">
+    <div class="flex w-2/3 items-center">
         <h1 class="font-bold"><span class="text-red-600">Movie Name: </span> {{ $quotes->name }}</h1>
         <h1 class="ml-7 font-bold"><span class="text-red-600">Movie Title:</span> {{ $quotes->title }}</h1>
         <span class="ml-7 font-bold">Movie Image: <img class="ml-40 w-1/2" src="{{ asset('images/' . $quotes->img) }}"></span>

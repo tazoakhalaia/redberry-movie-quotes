@@ -16,7 +16,6 @@ class QuoteRequest extends FormRequest
         return [
             "title" => 'required',
             "name" => 'required',
-            "img" => 'required'
         ];
     }
 }

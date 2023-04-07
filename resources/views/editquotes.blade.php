@@ -9,12 +9,22 @@
     <title>Edit</title>
 </head>
 <body>
-<form action ="/quotes-update/{{ $quote->id }}" method="POST">
+<form action ="/quotes-update/{{ $quote->id }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('put')
-    <label for="small-input" class="block mb-2 text-lg font-medium text-emerald-400 dark:text-white">Update</label>
-    <x-editinput name="title" type="text" value="{{ $quote->title }}"/>
-    <x-editinput name="name" type="text" value="{{ $quote->name }}" />
+
+    <label class="block mb-2 text-lg font-medium text-emerald-400 dark:text-white">Name</label>
+    <input class="block w-1/4
+p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50
+sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700
+dark:border-gray-600 dark:placeholder-gray-400
+dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="name" type="text" value="{{ $quote->name }}" />
+    <label class="block mb-2 text-lg font-medium text-emerald-400 dark:text-white">Title</label>
+    <input class="block w-1/4
+p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50
+sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700
+dark:border-gray-600 dark:placeholder-gray-400
+dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="title" type="text" value="{{ $quote->title }}">
 <x-button type="submit" buttonName="Update" />
 </form>
 </body>
