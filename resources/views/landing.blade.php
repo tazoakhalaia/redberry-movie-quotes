@@ -17,9 +17,9 @@
 </div>
 <div class="w-full flex justify-center items-center">
     <div>
-        <img class="w-1/3 m-auto" src="{{ asset('images/' . $quote->img) }}" alt="Patrick Image">
+        <img class="w-1/3 m-auto" src="{{ asset('images/' . $quote->img) }}">
         <h1 class="text-center text-white">{{ $quote->title }}</h1>
-        <h1 class="text-center text-white">{{ $quote->name }}</h1>
+        <h1 class="text-center text-white">{{ $quote->movie->name }}</h1>
     </div>
 </div>
 </body>

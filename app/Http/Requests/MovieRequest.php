@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Doctrine\Inflector\Rules\French\Rules;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class QuoteRequest extends FormRequest
+class MovieRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -16,9 +14,7 @@ class QuoteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "title" => 'required',
-            'img' => 'required',
-            'movie_name' => 'required',
+            'name' => 'required',
         ];
     }
 }

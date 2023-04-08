@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MovieRequest;
+use App\Http\Requests\QuoteMovieRequest;
 use App\Http\Requests\QuoteRequest;
+use App\Models\Movies;
 use App\Models\Quotes;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -14,18 +17,31 @@ class QuoteController extends Controller
     }
 
     public function store(QuoteRequest $request) : RedirectResponse{
+//        $image = $request->file('img');
+//        $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+//        $image->move(public_path('images'), $filename);
+//        $quote = new Quotes();
+//        $quote->title = $request->title;
+//        $quote->img = $filename;
+//        $quote->save();
+//        return redirect('quotes');
+//        if (is_null($quote)){
+//            return redirect('quotes')->withErrors('error');
+//        }
         $image = $request->file('img');
         $filename = uniqid() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $filename);
-        $quote = new Quotes();
-        $quote->title = $request->title;
-        $quote->name = $request->name;
-        $quote->img = $filename;
+
+        $movie = Movies::create(['name' => $request->input('movie_name')]);
+
+        $quote = new Quotes([
+            'title' => $request->input('title'),
+            'img' => $filename,
+            'movie_id' => $movie->id,
+        ]);
         $quote->save();
-        return redirect('quotes');
-        if (is_null($quote)){
-            return redirect('quotes')->withErrors('error');
-        }
+
+        return redirect()->route('quotes');
     }
     public function destroy(Quotes $quotes) : RedirectResponse{
         $quotes->delete();

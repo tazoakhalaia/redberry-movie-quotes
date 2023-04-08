@@ -18,14 +18,15 @@
 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50
 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700
 dark:border-gray-600 dark:placeholder-gray-400
-dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="name" type="text" value="{{ $quote->name }}" />
+dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="name" type="text" value="{{ $quote->movie->name }}" />
     <label class="block mb-2 text-lg font-medium text-emerald-400 dark:text-white">Title</label>
     <input class="block w-1/4
 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50
 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700
 dark:border-gray-600 dark:placeholder-gray-400
 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="title" type="text" value="{{ $quote->title }}">
-    <input type="file" name="img" accept="image/*">
+    <input type="file" name="img">
+    <img class="w-1/6" src="{{ asset('images/' . $quote->img) }}" alt="Quote Image">
     <x-button type="submit" buttonName="Update" />
 </form>
 </body>

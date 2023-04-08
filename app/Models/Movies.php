@@ -4,19 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Movies;
 
-class Quotes extends Model
+class Movies extends Model
 {
     use HasFactory;
+
     protected $guarded = ['id'];
     protected $fillable = [
-        'title',
-        'img',
-        'movie_id',
+        'name',
     ];
-
-    public function movie(){
-        return $this->belongsTo(Movies::class);
+    public function quotes()
+    {
+        return $this->hasMany(Quotes::class);
     }
 }

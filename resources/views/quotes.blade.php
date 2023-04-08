@@ -23,7 +23,7 @@
     @csrf
     <div class="w-1/4">
     <x-form-inputs name="title" type="text" placeholder="Title" label="Title" />
-    <x-form-inputs name="name" type="text" placeholder="Name" label="Name" />
+        <x-form-inputs name="movie_name" type="text" placeholder="Name" label="MovieName" />
     <x-form-inputs name="img" type="file" placeholder="image" label="Image" />
     </div>
     <x-button type="submit" buttonName="Create" />
@@ -36,7 +36,7 @@
 @foreach($quote as $quotes)
     <div class="border rounded-md p-2.5 mt-4 flex justify-between">
     <div class="flex w-2/3 items-center">
-        <h1 class="font-bold"><span class="text-red-600">Movie Name: </span> {{ $quotes->name }}</h1>
+        <h1 class="font-bold"><span class="text-red-600">Movie Name: </span> {{ $quotes->movie->name }}</h1>
         <h1 class="ml-7 font-bold"><span class="text-red-600">Movie Title:</span> {{ $quotes->title }}</h1>
         <img class="ml-40 w-1/6" src="{{ asset('images/' . $quotes->img) }}">
 
