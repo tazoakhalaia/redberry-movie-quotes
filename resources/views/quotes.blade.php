@@ -23,6 +23,7 @@
     @csrf
     <div class="w-1/4">
     <x-form-inputs name="title" type="text" placeholder="Title" label="Title" />
+        <x-form-inputs name="title_ka" type="text" placeholder="Title" label="Title_ka" />
         <x-form-inputs name="movie_name" type="text" placeholder="Name" label="MovieName" />
     <x-form-inputs name="img" type="file" placeholder="image" label="Image" />
     </div>

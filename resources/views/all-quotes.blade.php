@@ -9,7 +9,7 @@
     <title>{{ $quote->movie->name }}</title>
 </head>
 <body>
-<img class="ml-40 w-1/6" src="{{ asset('images/' . $quote->img) }}">
+<img class="ml-40 w-1/6" src="{{ asset('images/' . $quote->img) }}" alt="pic">
 <h1>{{ $quote->movie->name }}</h1>
 <h1>{{ $quote->title }}</h1>
 </body>

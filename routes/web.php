@@ -22,4 +22,4 @@ Route::middleware(['admin'])->group(function () {
         Route::post('/quotes-create', 'store')->name('quotes-create');
     });
 });
-Route::get('movies/{id}', [MovieController::class, 'index'])->name('movies');
+Route::get('movies/{quote}', [MovieController::class, 'index'])->name('movies');

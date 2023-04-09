@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Movie;
 
-class Movies extends Model
+class Quote extends Model
 {
     use HasFactory;
-
     protected $guarded = ['id'];
-    public function quotes()
-    {
-        return $this->hasMany(Quotes::class);
+
+    public function movie(){
+        return $this->belongsTo(Movie::class);
     }
 }

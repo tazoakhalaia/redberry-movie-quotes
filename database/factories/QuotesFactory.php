@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Movies;
-use App\Models\Quotes;
+use App\Models\Movie;
+use App\Models\Quote;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Quotes>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Quote>
  */
 class QuotesFactory extends Factory
 {
@@ -16,14 +16,14 @@ class QuotesFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    protected $model = Quotes::class;
+    protected $model = Quote::class;
     public function definition(): array
     {
         return [
             'title' => $this->faker->sentence(),
             'name' => $this->faker->name(),
             'img' => $this->faker->imageUrl(),
-            'movie_id' => Movies::factory()->create()->id,
+            'movie_id' => Movie::factory()->create()->id,
         ];
     }
 }

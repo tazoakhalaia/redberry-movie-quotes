@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Quotes;
+use App\Models\Quote;
 use Illuminate\View\View;
 
 class MovieController extends Controller
 {
-    public function index($id) : View{
-        $quote = Quotes::find($id);
-        return view('moviequotes', ['quote' => $quote]);
+    public function index(Quote $quote) : View{
+        return view('all-quotes', ['quote' => $quote]);
     }
 }

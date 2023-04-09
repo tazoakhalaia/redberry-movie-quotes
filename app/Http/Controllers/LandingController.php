@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Quotes;
+use App\Models\Quote;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class LandingController extends Controller
 {
     public function index():View{
-        $quote = Quotes::inRandomOrder()->first();
+        $quote = Quote::inRandomOrder()->first();
         return view('landing', ['quote' => $quote]);
     }
 }
