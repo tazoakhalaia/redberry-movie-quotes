@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\LandingController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\QuoteController;
+use App\Http\Controllers\MovieController;
 
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
@@ -21,5 +22,4 @@ Route::middleware(['admin'])->group(function () {
         Route::post('/quotes-create', 'store')->name('quotes-create');
     });
 });
-
-
+Route::get('movies/{id}', [MovieController::class, 'index'])->name('movies');

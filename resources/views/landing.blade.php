@@ -16,10 +16,10 @@
     </div>
 </div>
 <div class="w-full flex justify-center items-center">
-    <div>
+    <div class="text-center">
         <img class="w-1/3 m-auto" src="{{ asset('images/' . $quote->img) }}">
         <h1 class="text-center text-white">{{ $quote->title }}</h1>
-        <h1 class="text-center text-white">{{ $quote->movie->name }}</h1>
+        <a href="movies/{{ $quote->id }}" class="text-sky-500">{{ $quote->movie->name }}</a>
     </div>
 </div>
 </body>
