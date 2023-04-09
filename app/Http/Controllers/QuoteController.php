@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\MovieRequest;
-use App\Http\Requests\QuoteMovieRequest;
+
 use App\Http\Requests\QuoteRequest;
 use App\Models\Movies;
 use App\Models\Quotes;
@@ -17,17 +16,6 @@ class QuoteController extends Controller
     }
 
     public function store(QuoteRequest $request) : RedirectResponse{
-//        $image = $request->file('img');
-//        $filename = uniqid() . '.' . $image->getClientOriginalExtension();
-//        $image->move(public_path('images'), $filename);
-//        $quote = new Quotes();
-//        $quote->title = $request->title;
-//        $quote->img = $filename;
-//        $quote->save();
-//        return redirect('quotes');
-//        if (is_null($quote)){
-//            return redirect('quotes')->withErrors('error');
-//        }
         $image = $request->file('img');
         $filename = uniqid() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $filename);
