@@ -19,7 +19,7 @@
     </div>
 @endif
 
-<form action="/quotes-create" method="POST" enctype="multipart/form-data">
+<form action="/quotes" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="w-1/4">
     <x-form-inputs name="title" type="text" placeholder="Title" label="Title" />
@@ -43,7 +43,7 @@
 
     </div>
     <div class="flex items-center">
-        <a href="/quotes-delete/{{ $quotes->id }}"><x-button  buttonName="DELETE" /></a>
+        <a href="/quotes/{{ $quotes->id }}"><x-button  buttonName="DELETE" /></a>
         <a href="/quotes-edit/{{ $quotes->id }}"><x-button buttonName="EDIT" /></a>
     </div>
     </div>

@@ -9,7 +9,7 @@
     <title>Edit</title>
 </head>
 <body>
-<form action ="/quotes-update/{{ $quote->id }}" method="POST" enctype="multipart/form-data">
+<form action ="/quotes/{{ $quote->id }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('put')
 
