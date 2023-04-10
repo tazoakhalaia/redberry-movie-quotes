@@ -29,7 +29,7 @@ class QuoteController extends Controller
     }
     public function destroy(Quote $quotes) : RedirectResponse{
         $quotes->delete();
-        return redirect('quotes');
+        return redirect()->route('quotes');
     }
 
     public function edit(Quote $quotes) : View{
@@ -38,7 +38,7 @@ class QuoteController extends Controller
 
     public function update(StoreQuoteRequest $request, Quote $quotes) : RedirectResponse{
         $quotes->update($request->validated());
-        return redirect('quotes');
+        return redirect()->route('quotes');
     }
 
 }

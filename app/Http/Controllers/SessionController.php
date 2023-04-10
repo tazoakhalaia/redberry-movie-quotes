@@ -15,14 +15,14 @@ class SessionController extends Controller
     public function login(StoreLoginRequest $request) : RedirectResponse
     {
         if(Auth::attempt($request->validated())) {
-            return redirect('quotes');
+            return redirect()->route('quotes');
         } else {
-            return redirect('/login')->with('error', 'Invalid email or password.');
+            return redirect()->route('login')->with('error', 'Invalid email or password.');
         }
     }
 
     public function logout() : RedirectResponse {
         Auth::logout();
-        return redirect('login');
+        return redirect()->route('login');
     }
 }
