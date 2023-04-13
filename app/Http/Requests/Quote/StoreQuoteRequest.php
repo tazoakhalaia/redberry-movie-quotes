@@ -17,7 +17,7 @@ class StoreQuoteRequest extends FormRequest
         return [
             'title' => 'required',
             'img' => 'required',
-            'movie_id' => [Rule::exists('movies, id')],
+            'movie_id' => ['required',Rule::exists('movies, id')],
         ];
     }
 }

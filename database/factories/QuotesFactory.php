@@ -20,10 +20,7 @@ class QuotesFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(),
-            'name' => $this->faker->name(),
-            'img' => $this->faker->imageUrl(),
-            'movie_id' => Movie::factory()->create()->id,
+
         ];
     }
 }
