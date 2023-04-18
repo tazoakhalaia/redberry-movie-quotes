@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Movie\StoreMovieRequest;
-use App\Http\Requests\Quote\StoreQuoteRequest;
 use App\Models\Movie;
-use App\Models\Quote;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 
 class MovieController extends Controller
@@ -19,9 +16,7 @@ class MovieController extends Controller
     }
 
     public function store(StoreMovieRequest $request) : RedirectResponse{
-        Movie::create([
-            'name' => $request->name,
-        ]);
+        Movie::create($request->validated());
         return redirect()->route('quotes');
     }
 

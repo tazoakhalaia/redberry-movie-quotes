@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
-    <title>Quotes</title>
+    <title>Admin Page</title>
 </head>
 <body>
 @if($errors->any())
@@ -46,7 +46,7 @@
 </form>
 <form action="{{ route('logout') }}" method="POST">
     @csrf
-    <x-button class="bg-green-700" type="submit" buttonName="Logout" />
+    <x-button class="bg-gray-600" type="submit" buttonName="Logout" />
 </form>
 
 @foreach($quote as $quotes)
@@ -59,8 +59,8 @@
     </div>
     <div class="flex items-center">
         <a href="/quotes/{{ $quotes->id }}"><x-button class="bg-red-700" buttonName="DELETE" /></a>
-        <a href="/quotes-edit/{{ $quotes->id }}"><x-button class="bg-green-700" buttonName="Quote EDIT" /></a>
-        <a href="/movie-edit/{{ $quotes->movie->id }}"><x-button class="bg-green-700" buttonName="Movie EDIT" /></a>
+        <a href="/quotes-edit/{{ $quotes->id }}"><x-button class="bg-orange-600" buttonName="Quote EDIT" /></a>
+        <a href="/movie-edit/{{ $quotes->movie->id }}"><x-button class="bg-orange-600" buttonName="Movie EDIT" /></a>
 
     </div>
     </div>
