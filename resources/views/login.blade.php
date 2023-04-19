@@ -15,8 +15,10 @@
     @endif
     <form method="post" action="{{ route('login') }}">
         @csrf
-        <x-form-inputs type="email" name="email" placeholder="Email" label="Email" />
-        <x-form-inputs type="password" name="password" placeholder="Password" label="Password" />
+        <label for="password">{{ trans("profile.emailLabel") }}</label>
+        <x-form-inputs type="email" name="email" placeholder="Email"  />
+        <label for="password">{{ trans("profile.passwordLabel") }}</label>
+        <x-form-inputs type="password" name="password" placeholder="Password" />
         <button class="bg-sky-700
         text-white font-bold text-sm py-2 px-4 border
         rounded uppercase" type="submit">Login</button>

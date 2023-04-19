@@ -23,6 +23,7 @@
     @csrf
     <div class="w-1/4">
     <x-form-inputs name="title" type="text" placeholder="Title" label="Title" />
+        <x-form-inputs name="title_ka" type="text" placeholder="Title_ka" label="Title_ka" />
     <x-form-inputs name="img" type="file" placeholder="image" label="Image" />
         <select class="shadow
         border border-sky-500 rounded w-full

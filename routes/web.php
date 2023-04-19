@@ -6,8 +6,15 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\MovieController;
 
+Route::prefix('/{locale}')->middleware('setLocale')->group(function () {
+    Route::get('/', [LandingController::class, 'index'])->name('landing');
+    Route::get('/quotes', [QuoteController::class, 'index'])->name('quotes');
+    Route::get('/login', [SessionController::class, 'index'])->name('login');
+});
 
-Route::get('/' , [LandingController::class, 'index'])->name('landing');
+Route::get('/', function () {
+    return redirect()->route('landing', ['locale' => 'en']);
+});
 Route::get('/login', [SessionController::class, 'index'])->name('login');
 Route::controller(SessionController::class)->group(function (){
     Route::post('/login', 'login')->name('login');
