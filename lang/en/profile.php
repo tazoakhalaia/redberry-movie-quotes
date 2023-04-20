@@ -13,5 +13,6 @@ return [
     'create' => 'Create',
     'logout' => 'Logout',
     'movieName' => 'Movie Name',
+    'quotesFor' => 'Quotes For'
 ]
 ?>

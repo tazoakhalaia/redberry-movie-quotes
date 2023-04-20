@@ -12,6 +12,7 @@ return [
     'createMovieName' => 'შექმენი ფილმის სახელი',
     'create' => 'შექმნა',
     'logout' => 'გასვლა',
-    'movieName' => 'ფილმის სახელი'
+    'movieName' => 'ფილმის სახელი',
+    'quotesFor' => 'ქვოტი'
 ]
 ?>
