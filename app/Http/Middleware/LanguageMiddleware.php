@@ -16,7 +16,7 @@ class LanguageMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $locale = $request->segment(1);
+        $locale = $request->input('lang', App::getLocale());
 
         if (!in_array($locale, ['en', 'ka'])) {
             $locale = 'en';

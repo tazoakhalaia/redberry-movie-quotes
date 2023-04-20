@@ -10,6 +10,10 @@
 </head>
 <body class="min-h-screen flex justify-center items-center">
 <div>
+    <div class="flex">
+        <a href="{{ route('login', ['lang' => 'ka']) }}" class="border rounded-md"><button>{{ trans("profile.ka") }}</button></a>
+        <a href="{{ route('login', ['lang' => 'en']) }}" class="border rounded-md ml-2.5"><button>{{ trans("profile.en") }}</button></a>
+    </div>
     @if (session('error'))
         <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">{{ session('error') }}</div>
     @endif
@@ -21,7 +25,7 @@
         <x-form-inputs type="password" name="password" placeholder="Password" />
         <button class="bg-sky-700
         text-white font-bold text-sm py-2 px-4 border
-        rounded uppercase" type="submit">Login</button>
+        rounded uppercase" type="submit">{{ trans("profile.login") }}</button>
     </form>
 </div>
 </body>

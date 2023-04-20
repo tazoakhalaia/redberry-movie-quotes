@@ -33,8 +33,9 @@ class QuoteController extends Controller
         ]);
         return redirect()->route('quotes');
     }
-    public function destroy(Quote $quotes) : RedirectResponse{
-        $quotes->delete();
+    public function destroy($id) : RedirectResponse{
+        $quote = Quote::findOrFail($id);
+        $quote->delete();
         return redirect()->route('quotes');
     }
 
