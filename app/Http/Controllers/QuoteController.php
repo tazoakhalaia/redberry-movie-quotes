@@ -22,14 +22,9 @@ class QuoteController extends Controller
         $image = $request->file('img');
         $filename = uniqid() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $filename);
-//        $titles = [
-//            'en' => $request->input('title'),
-//            'ka' => $request->input('title_ka')
-//        ];
         Quote::create([
-            'title' => json_encode($request->validated()['title']),
+            ...$request->validated(),
             'img' => $filename,
-            'movie_id' => $request->validated()['movie_id'],
         ]);
         return redirect()->route('quotes');
     }
