@@ -24,7 +24,7 @@ class StoreQuoteRequest extends FormRequest
     {
         $this->merge([
             'title' => json_encode([
-                'en' => $this->input('title'),
+                'en' => $this->input('title_en'),
                 'ka' => $this->input('title_ka'),
             ]),
         ]);

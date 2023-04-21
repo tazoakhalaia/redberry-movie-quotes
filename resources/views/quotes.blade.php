@@ -26,7 +26,7 @@
     @csrf
     <div class="w-1/4">
         <label for="title">{{ trans('profile.quote') }}</label>
-    <x-form-inputs name="title" type="text" placeholder="Title" />
+    <x-form-inputs name="title_en" type="text" placeholder="Title" />
         <label for="title_ka">{{ trans('profile.quote_ka') }}</label>
         <x-form-inputs name="title_ka" type="text" placeholder="Title_ka" />
         <label for="img">{{ trans('profile.image') }}</label>
