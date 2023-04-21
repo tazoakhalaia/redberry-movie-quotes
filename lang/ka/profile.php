@@ -2,17 +2,17 @@
 return [
     'ka' => 'ქართული',
     'en' => 'ინგლისური',
-    'passwordLabel' => 'პაროლი',
-    'emailLabel' => 'მეილი',
+    'password_label' => 'პაროლი',
+    'email_label' => 'მეილი',
     'login' => 'შესვლა',
     'quote' => 'ქვოტი',
     'quote_ka' => 'ქვოტი ქართულად',
     'image' => 'სურათი',
-    'chooseMovie' => 'არიჩიე ფილმი',
-    'createMovieName' => 'შექმენი ფილმის სახელი',
+    'choose_movie' => 'არიჩიე ფილმი',
+    'create_movie_name' => 'შექმენი ფილმის სახელი',
     'create' => 'შექმნა',
     'logout' => 'გასვლა',
-    'movieName' => 'ფილმის სახელი',
-    'quotesFor' => 'ქვოტი'
+    'movie_name' => 'ფილმის სახელი',
+    'quotes_for' => 'ქვოტი'
 ]
 ?>

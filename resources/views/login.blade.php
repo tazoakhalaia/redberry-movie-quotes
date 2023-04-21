@@ -19,9 +19,9 @@
     @endif
     <form method="post" action="{{ route('login') }}">
         @csrf
-        <label for="password">{{ trans("profile.emailLabel") }}</label>
+        <label for="password">{{ trans("profile.email_label") }}</label>
         <x-form-inputs type="email" name="email" placeholder="Email"  />
-        <label for="password">{{ trans("profile.passwordLabel") }}</label>
+        <label for="password">{{ trans("profile.password_label") }}</label>
         <x-form-inputs type="password" name="password" placeholder="Password" />
         <button class="bg-sky-700
         text-white font-bold text-sm py-2 px-4 border

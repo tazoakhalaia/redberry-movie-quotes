@@ -27,7 +27,6 @@ class StoreQuoteRequest extends FormRequest
                 'en' => $this->input('title'),
                 'ka' => $this->input('title_ka'),
             ]),
-            'movie_id' => $this->input('movie_id'),
         ]);
     }
 }

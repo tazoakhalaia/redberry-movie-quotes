@@ -2,17 +2,17 @@
 return [
     'ka' => 'ka',
     'en' => 'en',
-    'passwordLabel' => 'Password',
-    'emailLabel' => 'Email',
+    'password_label' => 'Password',
+    'email_label' => 'Email',
     'login' => 'Login',
     'quote' => 'Quote',
     'quote_ka' => 'Quote in Georgian',
     'image' => 'Image',
-    'chooseMovie' => 'Choose Movie',
-    'createMovieName' => 'Create Movie Name',
+    'choose_movie' => 'Choose Movie',
+    'create_movie_name' => 'Create Movie Name',
     'create' => 'Create',
     'logout' => 'Logout',
-    'movieName' => 'Movie Name',
-    'quotesFor' => 'Quotes For'
+    'movie_name' => 'Movie Name',
+    'quotes_for' => 'Quotes For'
 ]
 ?>

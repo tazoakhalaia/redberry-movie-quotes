@@ -14,7 +14,7 @@
     <a href="{{ route('movies', ['movie' => $movie->id, 'lang' => 'en']) }}" class="border rounded-md ml-2.5 bg-red-700"><button>{{ trans("profile.en") }}</button></a>
 </div>
 <div class="m-auto  w-1/2">
-<h1> {{ trans('profile.quotesFor') }} {{ $movie->name }}</h1>
+<h1> {{ trans('profile.quotes_for') }} {{ $movie->name }}</h1>
 <ul>
     @foreach ($movie->quote as $quote)
         <li>
