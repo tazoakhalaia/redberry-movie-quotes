@@ -28,14 +28,13 @@ class QuoteController extends Controller
         ]);
         return redirect()->route('quotes');
     }
-    public function destroy($id) : RedirectResponse{
-        $quote = Quote::findOrFail($id);
+    public function destroy(Quote $quote) : RedirectResponse{
         $quote->delete();
         return redirect()->route('quotes');
     }
 
-    public function edit(Quote $quotes) : View{
-        return view('edit-quotes', ['quote' => $quotes]);
+    public function edit(Quote $quote) : View{
+        return view('edit-quotes', ['quote' => $quote]);
     }
 
     public function update(UpdateQuoteRequest $request, $id) : RedirectResponse{

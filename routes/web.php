@@ -20,9 +20,9 @@ Route::group(['middleware' => 'admin', 'controller' => QuoteController::class], 
     Route::middleware('setLocale')->group(function () {
         Route::get('/quotes', 'index')->name('quotes');
     });
-    Route::delete('/quotes/{quotes}', 'destroy')->name('quotes.delete');
-    Route::get('/quotes-edit/{quotes}', 'edit')->name('edit');
-    Route::put('/quotes/{quotes}' , 'update')->name('quotes-update');
+    Route::delete('/quotes/{quote}', 'destroy')->name('quotes.delete');
+    Route::get('/quotes-edit/{quote}', 'edit')->name('edit');
+    Route::put('/quotes/{quote}' , 'update')->name('quotes-update');
     Route::post('/quotes', 'store')->name('quotes-create');
 });
 
