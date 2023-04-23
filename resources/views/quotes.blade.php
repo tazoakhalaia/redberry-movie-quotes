@@ -25,7 +25,7 @@
 <form action="{{ route('quotes-create') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="w-1/4">
-        <label for="title">{{ trans('profile.quote') }}</label>
+        <label for="title_en">{{ trans('profile.quote') }}</label>
     <x-form-inputs name="title_en" type="text" placeholder="Title" />
         <label for="title_ka">{{ trans('profile.quote_ka') }}</label>
         <x-form-inputs name="title_ka" type="text" placeholder="Title_ka" />
@@ -62,7 +62,7 @@
     <div class="border rounded-md p-2.5 mt-4 flex justify-between">
     <div class="flex w-2/3 items-center">
         <h1 class="font-bold"><span class="text-red-600">{{ trans('profile.movie_name') }} - </span> {{ $quotes->movie->name }}</h1>
-        <h1 class="ml-7 font-bold"><span class="text-red-600">{{ trans('profile.quote') }}:</span> {{ json_decode($quotes->title, true)[app()->getLocale()]}}</h1>
+        <h1 class="ml-7 font-bold"><span class="text-red-600">{{ trans('profile.quote') }}:</span> {{ json_decode($quotes->title_en, true)[app()->getLocale()]}}</h1>
         <img class="ml-40 w-1/6" src="{{ asset('images/' . $quotes->img) }}" alt="pic">
 
     </div>

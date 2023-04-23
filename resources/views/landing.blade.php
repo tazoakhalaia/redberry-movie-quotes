@@ -18,7 +18,7 @@
 <div class="w-full flex justify-center items-center">
     <div class="text-center">
         <img class="w-1/3 m-auto" src="{{ asset('images/' . $quote->img) }}">
-        <h1 class="text-center text-white">{{ json_decode($quote->title, true)[app()->getLocale()]}}</h1>
+        <h1 class="text-center text-white">{{ json_decode($quote->title_en, true)[app()->getLocale()]}}</h1>
         <a href="movies/{{ $quote->movie->id }}" class="text-sky-500">{{ $quote->movie->name }}</a>
     </div>
 </div>

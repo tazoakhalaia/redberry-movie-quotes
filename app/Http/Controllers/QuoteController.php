@@ -39,7 +39,7 @@ class QuoteController extends Controller
 
     public function update(UpdateQuoteRequest $request, $id) : RedirectResponse{
         $quote = Quote::findOrFail($id);
-        $quote->title = $request->input('title');
+        $quote->title = $request->input('title_en');
         if ($request->hasFile('img')) {
             if ($quote->img && Storage::exists('public/images/' . $quote->img)) {
                 Storage::delete('public/images/' . $quote->img);

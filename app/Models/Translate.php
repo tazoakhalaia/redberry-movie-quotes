@@ -9,5 +9,5 @@ use Spatie\Translatable\HasTranslations;
 class Translate extends Model
 {
     use HasTranslations;
-    public $translatable = ['title'];
+    public $translatable = ['title_en'];
 }

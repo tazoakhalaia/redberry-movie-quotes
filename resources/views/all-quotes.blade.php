@@ -19,7 +19,7 @@
     @foreach ($movie->quote as $quote)
         <li>
             <img class="w-1/6" src="{{ asset('images/' . $quote->img) }}">
-            <h2 class="bg-amber-50 mt-1.5">{{ json_decode($quote->title, true)[app()->getLocale()]}}</h2>
+            <h2 class="bg-amber-50 mt-1.5">{{ json_decode($quote->title_en, true)[app()->getLocale()]}}</h2>
         </li>
     @endforeach
 </ul>

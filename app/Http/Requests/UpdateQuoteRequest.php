@@ -15,7 +15,7 @@ class UpdateQuoteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required',
+            'title_en' => 'required',
             'img' => 'nullable|image'
         ];
     }
