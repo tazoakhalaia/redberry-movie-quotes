@@ -1,7 +1,6 @@
-@props(['type', 'name', 'placeholder', 'label'])
+@props(['type', 'name', 'placeholder'])
 
 <div>
-    <label for="{{ $name }}" class="text-md text-sky-700">{{ $label }}</label>
     <input class="shadow appearance-none
         border border-sky-500 rounded w-full
         py-2 px-3 text-gray-700 mb-3 leading-tight

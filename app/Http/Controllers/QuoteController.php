@@ -23,24 +23,23 @@ class QuoteController extends Controller
         $filename = uniqid() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $filename);
         Quote::create([
-            'title' => $request->input('title'),
+            ...$request->validated(),
             'img' => $filename,
-            'movie_id' => $request->input('movie_id'),
         ]);
         return redirect()->route('quotes');
     }
-    public function destroy(Quote $quotes) : RedirectResponse{
-        $quotes->delete();
+    public function destroy(Quote $quote) : RedirectResponse{
+        $quote->delete();
         return redirect()->route('quotes');
     }
 
-    public function edit(Quote $quotes) : View{
-        return view('edit-quotes', ['quote' => $quotes]);
+    public function edit(Quote $quote) : View{
+        return view('edit-quotes', ['quote' => $quote]);
     }
 
     public function update(UpdateQuoteRequest $request, $id) : RedirectResponse{
         $quote = Quote::findOrFail($id);
-        $quote->title = $request->input('title');
+        $quote->title_en = $request->input('title_en');
         if ($request->hasFile('img')) {
             if ($quote->img && Storage::exists('public/images/' . $quote->img)) {
                 Storage::delete('public/images/' . $quote->img);
