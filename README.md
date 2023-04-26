@@ -1,66 +1,121 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1>Movie Quotes App</h1>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<h1>Table of Contents</h1>
+Prerequisites</br>
+Tech Stack</br>
+Getting Started</br>
+Migration</br>
+Development</br>
+Project Structure</br>
+DrawSql</br>
 
-## About Laravel
+<h1>Prerequisites</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<img width="50" height="50" src="https://raw.githubusercontent.com/RedberryInternship/example-project-laravel/7a054d64192f92566a0f48349002e0296a9d5347/readme/assets/php.svg" />
+<h2>PHP</h2>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<img width="50" height="50" src="https://github.com/RedberryInternship/example-project-laravel/blob/master/readme/assets/mysql.png?raw=true" />
+<h2>MySql</h2>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<img width="50" height="30" src="https://github.com/RedberryInternship/example-project-laravel/blob/master/readme/assets/npm.png?raw=true" />
+<h2>NPM</h2>
 
-## Learning Laravel
+<img width="50" height="50" src="https://github.com/RedberryInternship/example-project-laravel/blob/master/readme/assets/composer.png?raw=true" />
+<h2>Composer</h2>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<h1>Tech Stack</h1>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<img width="30" height="30" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" />
+<h2>Laravel - back-end framework</h2>
 
-## Laravel Sponsors
+<img width="30" height="30" src="https://avatars.githubusercontent.com/u/7535935?v=4&s=400" />
+<h2>Spatie Translatable - package for translation</h2>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<h1>Getting Started</h1>
 
-### Premium Partners
+1.  First of all you need to clone E Space repository from github:</br>
+https://github.com/RedberryInternship/tamazi-akhalaia-movie-quotes.git</br>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+2. Next step requires you to run composer install in order to install all the dependencies.</br>
+composer install</br>
 
-## Contributing
+3. after you have installed all the PHP dependencies, it's time to install all the JS dependencies:</br>
+npm install</br>
+and also:</br>
+npm run dev</br>
+in order to build your JS/SaaS resources.</br>
+4. Now we need to set our env file. Go to the root of your project and execute this command.</br>
+cp .env.example .env
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<h1>MySql</h1>
+DB_CONNECTION=mysql</br>
+DB_HOST=127.0.0.1</br>
+DB_PORT=3306</br>
+DB_DATABASE=laravel</br>
+DB_USERNAME=root</br>
+DB_PASSWORD=</br>
 
-## Code of Conduct
+after setting up .env file, execute:</br>
+php artisan config:cache</br>
+in order to cache environment variables.</br>
+Now execute in the root of you project following:</br>
+php artisan key:generate</br>
+Which generates auth key.</br>
+Now, you should be good to go!</br>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<h1>Migration</h1>
+if you've completed getting started section, then migrating database if fairly simple process, just execute:</br>
+php artisan migrate</br>
 
-## Security Vulnerabilities
+<h1>Running Unit tests</h1>
+Running unit tests also is very simple process, just type in following command:</br>
+composer test
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<h1>Development</h1>
+You can run Laravel's built-in development server by executing:</br>
+php artisan serve</br>
+when working on JS you may run:</br>
+npm run dev
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<h1>Project Structure</h1>
+├─── app</br>
+│   ├─── Console</br>
+│   ├─── Exceptions</br>
+│   ├─── Facades</br>
+│   ├─── Http</br>
+│   │   ├─── Controller</br>
+│   │   ├─── LandingController</br>
+│   │   ├─── MovieController</br>
+│   │   ├─── QuoteController</br>
+│   │   ├─── SessionController</br>
+│   ├─── Providers</br>
+│   ├─── Models</br>
+│   │   ├─── Movie</br>
+│   │   ├─── Quote</br>
+│   │   ├─── Translate</br>
+│   │   ├─── User</br>
+├─── bootstrap</br>
+├─── config</br>
+├─── database</br>
+├─── lang</br>
+├─── packages</br>
+├─── public</br>
+├─── resources</br>
+├─── routes</br>
+├─── storage</br>
+├─── tests</br>
+- .env</br>
+- .editorconfig</br>
+- composer.json</br>
+- package.json</br>
+-.env.example</br>
+-.gitattributes</br>
+-.gitignore</br>
+- artisan</br>
+- composer.lock</br>
+- package-lock.json</br>
+- phpunit.xml</br>
+- postcss.config.js</br>
+- vite.config.js</br>
+- tailwind.config.js</br>
