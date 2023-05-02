@@ -6,7 +6,6 @@ Tech Stack</br>
 Getting Started</br>
 Migration</br>
 Development</br>
-Project Structure</br>
 DrawSql</br>
 
 <h1>Prerequisites</h1>
@@ -101,45 +100,3 @@ when working on JS you may run:</br>
 npm run dev
 ```
 <img src="https://i.ibb.co/NxTtS5p/draw-SQL-movie-quotes-export-2023-04-30.png" alt="draw-SQL-movie-quotes-export-2023-04-30" border="0"></a><br /><a target='_blank' href='https://dedupelist.com/'><br />
-
-<h1>Project Structure</h1>
-├─── app</br>
-│   ├─── Console</br>
-│   ├─── Exceptions</br>
-│   ├─── Facades</br>
-│   ├─── Http</br>
-│   │   ├─── Controller</br>
-│   │   ├─── LandingController</br>
-│   │   ├─── MovieController</br>
-│   │   ├─── QuoteController</br>
-│   │   ├─── SessionController</br>
-│   ├─── Providers</br>
-│   ├─── Models</br>
-│   │   ├─── Movie</br>
-│   │   ├─── Quote</br>
-│   │   ├─── Translate</br>
-│   │   ├─── User</br>
-├─── bootstrap</br>
-├─── config</br>
-├─── database</br>
-├─── lang</br>
-├─── packages</br>
-├─── public</br>
-├─── resources</br>
-├─── routes</br>
-├─── storage</br>
-├─── tests</br>
-- .env</br>
-- .editorconfig</br>
-- composer.json</br>
-- package.json</br>
--.env.example</br>
--.gitattributes</br>
--.gitignore</br>
-- artisan</br>
-- composer.lock</br>
-- package-lock.json</br>
-- phpunit.xml</br>
-- postcss.config.js</br>
-- vite.config.js</br>
-- tailwind.config.js</br>
