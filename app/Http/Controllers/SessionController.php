@@ -9,9 +9,6 @@ use Illuminate\View\View;
 
 class SessionController extends Controller
 {
-    public function index():View{
-        return view('login');
-    }
     public function login(LoginRequest $request) : RedirectResponse
     {
         if(Auth::attempt($request->validated())) {
