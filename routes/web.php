@@ -10,13 +10,12 @@ Route::middleware('setLocale')->group(function () {
     Route::get('/', [LandingController::class, 'index'])->name('landing');
 });
 
-Route::controller(SessionController::class)->group(function (){
-    Route::middleware('setLocale')->group(function () {
-        Route::view('/login', 'login')->name('login');
-    });
+Route::group(['middleware' => 'setLocale', 'controller' => SessionController::class],function (){
+    Route::view('/login', 'login')->name('login');
     Route::post('/login', 'login')->name('signup');
     Route::post('/logout', 'logout')->name('logout');
 });
+
 Route::group(['middleware' => 'admin', 'controller' => QuoteController::class], function (){
     Route::middleware('setLocale')->group(function () {
         Route::get('/quotes', 'index')->name('quotes');
