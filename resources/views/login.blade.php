@@ -17,7 +17,7 @@
     @if (session('error'))
         <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">{{ session('error') }}</div>
     @endif
-    <form method="post" action="{{ route('login') }}">
+    <form method="post" action="{{ route('signup') }}">
         @csrf
         <label for="password">{{ trans("profile.email_label") }}</label>
         <x-form-inputs type="email" name="email" placeholder="Email"  />

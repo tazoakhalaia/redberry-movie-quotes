@@ -9,13 +9,13 @@ use App\Http\Controllers\MovieController;
 Route::middleware('setLocale')->group(function () {
     Route::get('/', [LandingController::class, 'index'])->name('landing');
 });
-Route::middleware('setLocale')->group(function () {
-    Route::get('/login', [SessionController::class, 'index'])->name('login');
-});
-Route::controller(SessionController::class)->group(function (){
-    Route::post('/login', 'login')->name('login');
+
+Route::group(['middleware' => 'setLocale', 'controller' => SessionController::class],function (){
+    Route::view('/login', 'login')->name('login');
+    Route::post('/login', 'login')->name('signup');
     Route::post('/logout', 'logout')->name('logout');
 });
+
 Route::group(['middleware' => 'admin', 'controller' => QuoteController::class], function (){
     Route::middleware('setLocale')->group(function () {
         Route::get('/quotes', 'index')->name('quotes');
@@ -25,7 +25,6 @@ Route::group(['middleware' => 'admin', 'controller' => QuoteController::class], 
     Route::put('/quotes/{quote}' , 'update')->name('quotes-update');
     Route::post('/quotes', 'store')->name('quotes-create');
 });
-
 Route::group(['controller' => MovieController::class], function (){
     Route::middleware('setLocale')->group(function () {
         Route::get('movies/{movie}',  'index')->name('movies');
