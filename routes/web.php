@@ -11,7 +11,7 @@ Route::middleware('setLocale')->group(function () {
 });
 
 Route::group(['middleware' => 'setLocale', 'controller' => SessionController::class],function (){
-    Route::get('/login', 'index')->name('login');
+    Route::view('/login', 'login')->name('login');
     Route::post('/login', 'login')->name('signup');
     Route::post('/logout', 'logout')->name('logout');
 });
