@@ -20,7 +20,7 @@
     <form method="post" action="{{ route('signup') }}">
         @csrf
         <label for="password">{{ trans("profile.email_label") }}</label>
-        <x-form-inputs type="email" name="email" placeholder="Email"  />
+        <x-form-inputs type="email" name="email" placeholder="Email" />
         <label for="password">{{ trans("profile.password_label") }}</label>
         <x-form-inputs type="password" name="password" placeholder="Password" />
         <button class="bg-sky-700

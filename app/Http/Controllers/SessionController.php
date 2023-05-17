@@ -10,6 +10,7 @@ class SessionController extends Controller
 {
     public function login(LoginRequest $request) : RedirectResponse
     {
+        
         if(Auth::attempt($request->validated())) {
             return redirect()->route('quotes');
         } else {
