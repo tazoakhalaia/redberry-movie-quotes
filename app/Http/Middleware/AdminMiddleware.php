@@ -20,6 +20,6 @@ class AdminMiddleware
             return $next($request);
         }
 
-        return redirect('login')->with('error', 'Please log in to access this page.');
+        return redirect()->route('login')->with('error', 'Please log in to access this page.');
     }
 }
