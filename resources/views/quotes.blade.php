@@ -19,8 +19,8 @@
     </div>
 @endif
 <div class="flex">
-    <a href="{{ route('quotes', ['lang' => 'ka']) }}" class="border rounded-md bg-blue-500"><button>{{ trans("profile.ka") }}</button></a>
-    <a href="{{ route('quotes', ['lang' => 'en']) }}" class="border rounded-md ml-2.5 bg-red-700"><button>{{ trans("profile.en") }}</button></a>
+    <a href="{{ route('quote', ['lang' => 'ka']) }}" class="border rounded-md bg-blue-500"><button>{{ trans("profile.ka") }}</button></a>
+    <a href="{{ route('quote', ['lang' => 'en']) }}" class="border rounded-md ml-2.5 bg-red-700"><button>{{ trans("profile.en") }}</button></a>
 </div>
 <form action="{{ route('quotes-create') }}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -67,7 +67,7 @@
 
     </div>
     <div class="flex items-center">
-        <form action="/quotes/{{ $quotes->id }}" method="POST">
+        <form action="/quote/{{ $quotes->id }}" method="POST">
             @csrf
             @method('DELETE')
             <x-button class="bg-red-700 ml-4 border-none mr-2" buttonName="{{ trans('admin-page.delete') }}" />

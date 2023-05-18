@@ -22,11 +22,13 @@ class UpdateQuoteRequest extends FormRequest
 
     public function prepareForValidation()
     {
-        $titleEn = $this->input('title_en');
-        $titleKa = $this->input('title_ka');
-        $encodedQuote = json_encode(['en' => $titleEn, 'ka' => $titleKa]);
-        $this->merge([
-            'title_en' => $encodedQuote,
-        ]);}
+       
+        $this->merge([ 
+            'title_en' => json_encode([
+                'en' => $this->title_en,
+                'ka' => $this->title_ka,
+            ]),
+        ]);
+    }
         
 }

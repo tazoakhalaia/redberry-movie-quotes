@@ -21,12 +21,12 @@ class MovieController extends Controller
     }
 
     public function edit(Movie $movie){
-        return view('movie-name-edit', ['movie' => $movie]);
+        return view('movie-edit', ['movie' => $movie]);
     }
 
     public function update(StoreMovieRequest $request, Movie $movie) : RedirectResponse{
         $movie->update($request->validated());
-        return redirect()->route('quotes');
+        return redirect()->route('quote');
     }
 
 }

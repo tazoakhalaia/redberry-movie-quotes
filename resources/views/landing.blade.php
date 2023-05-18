@@ -19,7 +19,7 @@
     <div class="text-center">
         <img class="w-1/2 m-auto rounded-md" src="{{ asset('images/' . $quote->img) }}">
         <h1 class="text-center text-white font-bold text-2xl mt-8 mb-10">{{ json_decode($quote->title_en, true)[app()->getLocale()]}}</h1>
-        <a href="movies/{{ $quote->movie->id }}" class="text-white text-2xl underline capitalize">{{ $quote->movie->name }}</a>
+        <a href="movie/{{ $quote->movie->id }}" class="text-white text-2xl underline capitalize">{{ $quote->movie->name }}</a>
     </div>
 </div>
 </body>
