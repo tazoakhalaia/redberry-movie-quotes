@@ -21,7 +21,9 @@ Route::group(['middleware' => 'admin', 'controller' => QuoteController::class], 
         Route::get('/quotes', 'index')->name('quotes');
     });
     Route::delete('/quotes/{quote}', 'destroy')->name('quotes.delete');
+    Route::middleware('setLocale')->group(function () {
     Route::get('/quotes-edit/{quote}', 'edit')->name('edit');
+    });
     Route::put('/quotes/{quote}' , 'update')->name('quotes-update');
     Route::post('/quotes', 'store')->name('quotes-create');
 });

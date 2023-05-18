@@ -8,18 +8,18 @@
     @vite('resources/css/app.css')
     <title>Landing Page</title>
 </head>
-<body class="bg-slate-700 min-h-screen flex">
+<body class="bg-gradient-radial bg-center bg-[#4E4E4E] bg-opacity-100 to-[#3D3B3B] min-h-screen flex">
 <div class="w-28 flex justify-center items-center">
     <div class="ml-2">
-        <a href="{{ route('landing', ['lang' => 'ka']) }}"><button class="block rounded-full text-white border border-slate-100 hover:bg-white hover:text-black">{{ trans("profile.ka") }}</button></a>
-        <a href="{{ route('landing', ['lang' => 'en']) }}"><button class="rounded-full text-white border border-slate-100 hover:bg-white hover:text-black mt-2">{{ trans("profile.en") }}</button></a>
+        <a href="{{ route('landing', ['lang' => 'en']) }}"><button class="rounded-full text-white border border-slate-100 p-2 hover:bg-white hover:text-black">{{ trans("profile.en") }}</button></a>
+        <a href="{{ route('landing', ['lang' => 'ka']) }}"><button class="block rounded-full text-white border p-2 border-slate-100 hover:bg-white hover:text-black mt-2">{{ trans("profile.ka") }}</button></a>
     </div>
 </div>
 <div class="w-full flex justify-center items-center">
     <div class="text-center">
-        <img class="w-1/3 m-auto" src="{{ asset('images/' . $quote->img) }}">
-        <h1 class="text-center text-white">{{ json_decode($quote->title_en, true)[app()->getLocale()]}}</h1>
-        <a href="movies/{{ $quote->movie->id }}" class="text-sky-500">{{ $quote->movie->name }}</a>
+        <img class="w-1/2 m-auto rounded-md" src="{{ asset('images/' . $quote->img) }}">
+        <h1 class="text-center text-white font-bold text-2xl mt-8 mb-10">{{ json_decode($quote->title_en, true)[app()->getLocale()]}}</h1>
+        <a href="movies/{{ $quote->movie->id }}" class="text-white text-2xl underline capitalize">{{ $quote->movie->name }}</a>
     </div>
 </div>
 </body>

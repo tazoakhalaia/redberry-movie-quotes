@@ -6,6 +6,10 @@ module.exports = {
         "./resources/**/*.vue",
     ],
     theme: {
+        height: {
+            allQuotesBox: '500px',
+            picSize: '80%',
+        },
         extend: {},
     },
     plugins: [],

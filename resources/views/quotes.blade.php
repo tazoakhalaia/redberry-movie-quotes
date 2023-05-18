@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
     <title>Admin Page</title>
 </head>
-<body>
+<body class="bg-gradient-to-r from-gray-100 via-neutral-200 to-gray-400">
 @if($errors->any())
     <div class="w-1/4">
         <ul>
@@ -59,7 +59,7 @@
 </form>
 
 @foreach($quote as $quotes)
-    <div class="border rounded-md p-2.5 mt-4 flex justify-between">
+    <div class="border border-gray-600 rounded-md p-2.5 mt-4 flex justify-between mb-4">
     <div class="flex w-2/3 items-center">
         <h1 class="font-bold"><span class="text-red-600">{{ trans('profile.movie_name') }} - </span> {{ $quotes->movie->name }}</h1>
         <h1 class="ml-7 font-bold"><span class="text-red-600">{{ trans('profile.quote') }}:</span> {{ json_decode($quotes->title_en, true)[app()->getLocale()]}}</h1>
@@ -70,10 +70,10 @@
         <form action="/quotes/{{ $quotes->id }}" method="POST">
             @csrf
             @method('DELETE')
-            <x-button class="bg-red-700" buttonName="DELETE" />
+            <x-button class="bg-red-700 ml-4 border-none mr-2" buttonName="{{ trans('adminpage.delete') }}" />
         </form>
-        <a href="/quotes-edit/{{ $quotes->id }}"><x-button class="bg-orange-600" buttonName="Quote EDIT" /></a>
-        <a href="/movie-edit/{{ $quotes->movie->id }}"><x-button class="bg-orange-600" buttonName="Movie EDIT" /></a>
+        <a href="/quotes-edit/{{ $quotes->id }}"><x-button class="bg-orange-600 border-none mr-2" buttonName="{{ trans('adminpage.quote_edit') }}" /></a>
+        <a href="/movie-edit/{{ $quotes->movie->id }}"><x-button class="bg-orange-600 border-none" buttonName="{{ trans('adminpage.movie_edit') }}" /></a>
 
     </div>
     </div>
