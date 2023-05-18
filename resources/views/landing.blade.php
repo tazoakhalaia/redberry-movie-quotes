@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
     <title>Landing Page</title>
 </head>
-<body class="bg-gradient-radial bg-center bg-[#4E4E4E] bg-opacity-100 to-[#3D3B3B] min-h-screen flex">
+<body class="bg-gradient-radial bg-center bg-gray-dark bg-opacity-100 to-gray-dark min-h-screen flex">
 <div class="w-28 flex justify-center items-center">
     <div class="ml-2">
         <a href="{{ route('landing', ['lang' => 'en']) }}"><button class="rounded-full text-white border border-slate-100 p-2 hover:bg-white hover:text-black">{{ trans("profile.en") }}</button></a>

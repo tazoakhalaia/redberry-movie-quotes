@@ -19,4 +19,14 @@ class UpdateQuoteRequest extends FormRequest
             'img' => 'nullable|image'
         ];
     }
+
+    public function prepareForValidation()
+    {
+        $titleEn = $this->input('title_en');
+        $titleKa = $this->input('title_ka');
+        $encodedQuote = json_encode(['en' => $titleEn, 'ka' => $titleKa]);
+        $this->merge([
+            'title_en' => $encodedQuote,
+        ]);}
+        
 }

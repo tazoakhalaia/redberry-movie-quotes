@@ -21,7 +21,7 @@ class MovieController extends Controller
     }
 
     public function edit(Movie $movie){
-        return view('movie-name-edit', ['movies' => $movie]);
+        return view('movie-name-edit', ['movie' => $movie]);
     }
 
     public function update(StoreMovieRequest $request, Movie $movie) : RedirectResponse{

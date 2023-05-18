@@ -9,11 +9,17 @@
     <title>Update Name</title>
 </head>
 <body class="min-h-screen flex justify-center items-center bg-gradient-to-r from-black via-slate-900 to-sky-700">
-<form action ="/movies/{{ $movies->id }}" method="POST">
+    <div>
+<div class="mt-2 mb-4">
+        <a href="{{ route('movie.edit', ['movie' => $movie->id, 'lang' => 'en']) }}"><button class="border border-red-500 rounded-md text-white">{{ trans("profile.en") }}</button></a>
+        <a href="{{ route('movie.edit', ['movie' => $movie->id, 'lang' => 'ka']) }}"><button class="ml-2 border border-blue-500 rounded-md text-white">{{ trans("profile.ka") }}</button></a>
+    </div>
+<form action ="/movie/{{ $movie->id }}" method="POST">
     @csrf
     @method('put')
-<input class="border border-gray-500 outline-none rounded-md w-50 p-2 bg-transparent text-white" name="name" type="text" value="{{ $movies->name }}">
-    <x-button type="submit" class="bg-green-500 mt-4 border-none" buttonName="Update" />
+<input class="border border-gray-500 outline-none rounded-md w-50 p-2 bg-transparent text-white" name="name" type="text" value="{{ $movie->name }}">
+    <x-button type="submit" class="bg-green-500 mt-4 border-none" buttonName="{{ trans('movie-edit.update') }}" />
 </form>
+    </div>
 </body>
 </html>

@@ -70,10 +70,10 @@
         <form action="/quotes/{{ $quotes->id }}" method="POST">
             @csrf
             @method('DELETE')
-            <x-button class="bg-red-700 ml-4 border-none mr-2" buttonName="{{ trans('adminpage.delete') }}" />
+            <x-button class="bg-red-700 ml-4 border-none mr-2" buttonName="{{ trans('admin-page.delete') }}" />
         </form>
-        <a href="/quotes-edit/{{ $quotes->id }}"><x-button class="bg-orange-600 border-none mr-2" buttonName="{{ trans('adminpage.quote_edit') }}" /></a>
-        <a href="/movie-edit/{{ $quotes->movie->id }}"><x-button class="bg-orange-600 border-none" buttonName="{{ trans('adminpage.movie_edit') }}" /></a>
+        <a href="/quotes-edit/{{ $quotes->id }}"><x-button class="bg-orange-600 border-none mr-2" buttonName="{{ trans('admin-page.quote_edit') }}" /></a>
+        <a href="/movie-edit/{{ $quotes->movie->id }}"><x-button class="bg-orange-600 border-none" buttonName="{{ trans('admin-page.movie_edit') }}" /></a>
 
     </div>
     </div>

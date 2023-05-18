@@ -34,12 +34,11 @@ class QuoteController extends Controller
     }
 
     public function edit(Quote $quote) : View{
-        return view('edit-quotes', ['quote' => $quote]);
+        return view('edit-quote', ['quote' => $quote]);
     }
 
-    public function update(UpdateQuoteRequest $request, $id) : RedirectResponse{
-        $quote = Quote::findOrFail($id);
-        $quote->title_en = json_encode(['en' => $request->input('title_en'), 'ka' => $request->input('title_ka')]);
+    public function update(UpdateQuoteRequest $request, Quote $quote) : RedirectResponse{
+        $quote->title_en = $request->input('title_en');
         if ($request->hasFile('img')) {
             if ($quote->img && Storage::exists('public/images/' . $quote->img)) {
                 Storage::delete('public/images/' . $quote->img);

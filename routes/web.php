@@ -22,7 +22,7 @@ Route::group(['middleware' => 'admin', 'controller' => QuoteController::class], 
     });
     Route::delete('/quotes/{quote}', 'destroy')->name('quotes.delete');
     Route::middleware('setLocale')->group(function () {
-    Route::get('/quotes-edit/{quote}', 'edit')->name('edit');
+    Route::get('/quotes-edit/{quote}', 'edit')->name('quote.edit');
     });
     Route::put('/quotes/{quote}' , 'update')->name('quotes-update');
     Route::post('/quotes', 'store')->name('quotes-create');
@@ -32,8 +32,10 @@ Route::group(['controller' => MovieController::class], function (){
         Route::get('movies/{movie}',  'index')->name('movies');
     });
     Route::post('/movie', 'store')->name('movies.create');
+    Route::middleware('setLocale')->group(function () {
     Route::get('/movie-edit/{movie}', 'edit')->name('movie.edit');
-    Route::put('/movies/{movie}' , 'update')->name('movies.update');
+    });
+    Route::put('/movie/{movie}' , 'update')->name('movie.update');
 });
 
 
