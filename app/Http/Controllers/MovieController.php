@@ -17,7 +17,7 @@ class MovieController extends Controller
 
     public function store(StoreMovieRequest $request) : RedirectResponse{
         Movie::create($request->validated());
-        return redirect()->route('quotes');
+        return redirect()->route('quote.index');
     }
 
     public function edit(Movie $movie){
@@ -26,7 +26,7 @@ class MovieController extends Controller
 
     public function update(StoreMovieRequest $request, Movie $movie) : RedirectResponse{
         $movie->update($request->validated());
-        return redirect()->route('quote');
+        return redirect()->route('quote.index');
     }
 
 }

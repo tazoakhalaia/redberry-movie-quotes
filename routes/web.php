@@ -17,14 +17,14 @@ Route::group(['middleware' => 'setLocale', 'controller' => SessionController::cl
 });
 
 Route::group(['middleware' => ['admin', 'setLocale'], 'controller' => QuoteController::class], function (){
-    Route::get('/quote', 'index')->name('quote');
-    Route::delete('/quote/{quote}', 'destroy')->name('quotes.delete');
+    Route::get('/quote', 'index')->name('quote.index');
+    Route::delete('/quote/{quote}', 'destroy')->name('quote.delete');
     Route::get('/quotes-edit/{quote}', 'edit')->name('quote.edit');
-    Route::put('/quote/{quote}' , 'update')->name('quotes-update');
-    Route::post('/quote', 'store')->name('quotes-create');
+    Route::put('/quote/{quote}' , 'update')->name('quote.update');
+    Route::post('/quote', 'store')->name('quote.create');
 });
 Route::group(['middleware' => 'setLocale', 'controller' => MovieController::class], function (){
-    Route::get('movie/{movie}',  'index')->name('movie');
+    Route::get('movie/{movie}',  'index')->name('movie.index');
     Route::post('/movie', 'store')->name('movie.create');
     Route::get('/movie-edit/{movie}', 'edit')->name('movie.edit');
     Route::put('/movie/{movie}' , 'update')->name('movie.update');

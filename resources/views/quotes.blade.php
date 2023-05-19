@@ -19,10 +19,10 @@
     </div>
 @endif
 <div class="flex">
-    <a href="{{ route('quote', ['lang' => 'ka']) }}" class="border rounded-md bg-blue-500"><button>{{ trans("profile.ka") }}</button></a>
-    <a href="{{ route('quote', ['lang' => 'en']) }}" class="border rounded-md ml-2.5 bg-red-700"><button>{{ trans("profile.en") }}</button></a>
+    <a href="{{ route('quote.index', ['lang' => 'ka']) }}" class="border rounded-md bg-blue-500"><button>{{ trans("profile.ka") }}</button></a>
+    <a href="{{ route('quote.index', ['lang' => 'en']) }}" class="border rounded-md ml-2.5 bg-red-700"><button>{{ trans("profile.en") }}</button></a>
 </div>
-<form action="{{ route('quotes-create') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('quote.create') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="w-1/4">
         <label for="title_en">{{ trans('profile.quote') }}</label>
