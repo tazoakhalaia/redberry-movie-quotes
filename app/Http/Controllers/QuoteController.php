@@ -26,11 +26,11 @@ class QuoteController extends Controller
             ...$request->validated(),
             'img' => $filename,
         ]);
-        return redirect()->route('quote.index');
+        return redirect()->route('quotes.index');
     }
     public function destroy(Quote $quote) : RedirectResponse{
         $quote->delete();
-        return redirect()->route('quote.index');
+        return redirect()->route('quotes.index');
     }
 
     public function edit(Quote $quote) : View{
@@ -49,7 +49,7 @@ class QuoteController extends Controller
             $validatedData['img'] = $filename;
         }
         $quote->update($validatedData);
-        return redirect()->route('quote.index');
+        return redirect()->route('quotes.index');
     }
 
 }

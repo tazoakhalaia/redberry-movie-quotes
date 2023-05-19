@@ -10,10 +10,10 @@
 </head>
 <body class="bg-gradient-to-r from-gray-200 via-blue-100 to-blue-300">
 <div class="mt-2 mb-4">
-        <a href="{{ route('quote.edit', ['quote' => $quote->id, 'lang' => 'en']) }}"><button class="ml-4 border border-red-500 rounded-md">{{ trans("profile.en") }}</button></a>
-        <a href="{{ route('quote.edit', ['quote' => $quote->id, 'lang' => 'ka']) }}"><button class="ml-4 border border-blue-500 rounded-md">{{ trans("profile.ka") }}</button></a>
+        <a href="{{ route('quotes.edit', ['quote' => $quote->id, 'lang' => 'en']) }}"><button class="ml-4 border border-red-500 rounded-md">{{ trans("profile.en") }}</button></a>
+        <a href="{{ route('quotes.edit', ['quote' => $quote->id, 'lang' => 'ka']) }}"><button class="ml-4 border border-blue-500 rounded-md">{{ trans("profile.ka") }}</button></a>
     </div>
-    <form action ="{{ route('quote.update', ['quote' => $quote->id]) }}"method="POST" enctype="multipart/form-data">
+    <form action ="{{ route('quotes.update', ['quote' => $quote->id]) }}"method="POST" enctype="multipart/form-data">
         @csrf
         @method('put')
         <label for="title_en" class="mt-2">{{ trans('quote-edit.quote_in_english') }}</label>

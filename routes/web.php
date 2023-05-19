@@ -17,17 +17,17 @@ Route::group(['middleware' => 'setLocale', 'controller' => SessionController::cl
 });
 
 Route::group(['middleware' => ['admin', 'setLocale'], 'controller' => QuoteController::class], function (){
-    Route::get('/quote', 'index')->name('quote.index');
-    Route::delete('/quote/{quote}', 'destroy')->name('quote.delete');
-    Route::get('/quotes-edit/{quote}', 'edit')->name('quote.edit');
-    Route::put('/quote/{quote}' , 'update')->name('quote.update');
-    Route::post('/quote', 'store')->name('quote.create');
+    Route::get('/quotes', 'index')->name('quotes.index');
+    Route::delete('/quotes/{quote}', 'destroy')->name('quotes.delete');
+    Route::get('/quotes/{quote}/edit', 'edit')->name('quotes.edit');
+    Route::put('/quotes/{quote}' , 'update')->name('quotes.update');
+    Route::post('/quotes', 'store')->name('quotes.store');
 });
 Route::group(['middleware' => 'setLocale', 'controller' => MovieController::class], function (){
-    Route::get('movie/{movie}',  'index')->name('movie.index');
-    Route::post('/movie', 'store')->name('movie.create');
-    Route::get('/movie-edit/{movie}', 'edit')->name('movie.edit');
-    Route::put('/movie/{movie}' , 'update')->name('movie.update');
+    Route::get('movies/{movie}',  'index')->name('movies.index');
+    Route::post('/movies', 'store')->name('movies.store');
+    Route::get('/movies/{movie}/edit', 'edit')->name('movies.edit');
+    Route::put('/movies/{movie}' , 'update')->name('movies.update');
 });
 
 

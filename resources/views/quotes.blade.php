@@ -19,10 +19,10 @@
     </div>
 @endif
 <div class="flex">
-    <a href="{{ route('quote.index', ['lang' => 'ka']) }}" class="border rounded-md bg-blue-500"><button>{{ trans("profile.ka") }}</button></a>
-    <a href="{{ route('quote.index', ['lang' => 'en']) }}" class="border rounded-md ml-2.5 bg-red-700"><button>{{ trans("profile.en") }}</button></a>
+    <a href="{{ route('quotes.index', ['lang' => 'ka']) }}" class="border rounded-md bg-blue-500"><button>{{ trans("profile.ka") }}</button></a>
+    <a href="{{ route('quotes.index', ['lang' => 'en']) }}" class="border rounded-md ml-2.5 bg-red-700"><button>{{ trans("profile.en") }}</button></a>
 </div>
-<form action="{{ route('quote.create') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('quotes.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="w-1/4">
         <label for="title_en">{{ trans('profile.quote') }}</label>
@@ -45,7 +45,7 @@
     <x-button class="bg-green-700 mb-5" type="submit" buttonName="{{ trans('profile.create') }}" />
 </form>
 <!-- movie name -->
-<form action="/movie" method="POST" enctype="multipart/form-data">
+<form action="{{ route('movies.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="w-1/4">
         <label for="name">{{ trans('profile.movie_name') }}</label>
@@ -67,13 +67,13 @@
 
     </div>
     <div class="flex items-center">
-        <form action="/quote/{{ $quotes->id }}" method="POST">
+        <form action="{{ route('quotes.delete', ['quote' => $quotes->id]) }}" method="POST">
             @csrf
             @method('DELETE')
             <x-button class="bg-red-700 ml-4 border-none mr-2" buttonName="{{ trans('admin-page.delete') }}" />
         </form>
-        <a href="/quotes-edit/{{ $quotes->id }}"><x-button class="bg-orange-600 border-none mr-2" buttonName="{{ trans('admin-page.quote_edit') }}" /></a>
-        <a href="/movie-edit/{{ $quotes->movie->id }}"><x-button class="bg-orange-600 border-none" buttonName="{{ trans('admin-page.movie_edit') }}" /></a>
+        <a href="{{ route('quotes.edit', ['quote' => $quotes->id]) }}"><x-button class="bg-orange-600 border-none mr-2" buttonName="{{ trans('admin-page.quote_edit') }}" /></a>
+        <a href="{{ route('movies.edit', ['movie' => $quotes->movie->id]) }}"><x-button class="bg-orange-600 border-none" buttonName="{{ trans('admin-page.movie_edit') }}" /></a>
 
     </div>
     </div>
