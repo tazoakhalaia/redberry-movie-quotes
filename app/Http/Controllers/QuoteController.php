@@ -26,20 +26,19 @@ class QuoteController extends Controller
             ...$request->validated(),
             'img' => $filename,
         ]);
-        return redirect()->route('quotes');
+        return redirect()->route('quotes.index');
     }
     public function destroy(Quote $quote) : RedirectResponse{
         $quote->delete();
-        return redirect()->route('quotes');
+        return redirect()->route('quotes.index');
     }
 
     public function edit(Quote $quote) : View{
-        return view('edit-quotes', ['quote' => $quote]);
+        return view('edit-quote', ['quote' => $quote]);
     }
 
-    public function update(UpdateQuoteRequest $request, $id) : RedirectResponse{
-        $quote = Quote::findOrFail($id);
-        $quote->title_en = $request->input('title_en');
+    public function update(UpdateQuoteRequest $request, Quote $quote) : RedirectResponse{
+        $validatedData = $request->validated();
         if ($request->hasFile('img')) {
             if ($quote->img && Storage::exists('public/images/' . $quote->img)) {
                 Storage::delete('public/images/' . $quote->img);
@@ -47,10 +46,10 @@ class QuoteController extends Controller
             $file = $request->file('img');
             $filename = uniqid() . '_' . $file->getClientOriginalName();
             $file->move(public_path('/images'), $filename);
-            $quote->img = $filename;
+            $validatedData['img'] = $filename;
         }
-        $quote->save();
-        return redirect()->route('quotes');
+        $quote->update($validatedData);
+        return redirect()->route('quotes.index');
     }
 
 }

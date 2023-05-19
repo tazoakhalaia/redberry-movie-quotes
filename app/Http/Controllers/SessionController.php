@@ -12,7 +12,7 @@ class SessionController extends Controller
     {
         
         if(Auth::attempt($request->validated())) {
-            return redirect()->route('quotes');
+            return redirect()->route('quotes.index');
         } else {
             return redirect()->route('login')->with('error', 'Invalid email or password.');
         }
