@@ -7,8 +7,10 @@ module.exports = {
     ],
     theme: {
         height: {
-            allQuotesBox: '500px',
+            allQuotesBoxHeight: '533px',
             picSize: '80%',
+            moviePicHeight: '386px',
+            allMoviePicheight: '414px'
         },
         extend: {
             backgroundImage: {
@@ -16,6 +18,10 @@ module.exports = {
               },
               backgroundColor: {
                 'gray-dark': 'gray',
+              },
+              width: {
+                moviePicWidth: '700px',
+                allMoviePicWidth: '748px',
               },
         },
     },
