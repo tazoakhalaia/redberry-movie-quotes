@@ -17,7 +17,8 @@
 <form action ="{{ route('movies.update', ['movie' => $movie->id]) }}"method="POST">
     @csrf
     @method('put')
-<input class="border border-gray-500 outline-none rounded-md w-50 p-2 bg-transparent text-black" name="name" type="text" value="{{ $movie->name }}">
+<input class="border border-gray-500 outline-none rounded-md w-50 p-2 bg-transparent text-black" name="name" type="text" value="{{ json_decode($movie->name, true)['en']}}">
+<input class="border border-gray-500 outline-none rounded-md w-50 p-2 bg-transparent text-black" name="name_ka" type="text" value="{{ json_decode($movie->name, true)['ka']}}">
     <x-button type="submit" class="bg-green-500 mt-4 border-none" buttonName="{{ trans('movie-edit.update') }}" />
 </form>
     </div>

@@ -11,7 +11,7 @@ class MovieController extends Controller
 {
     public function index(Movie $movie): View
     {
-        $movieWithQuotes = Movie::with('quote')->findOrFail($movie->id);
+        $movieWithQuotes = Movie::with('quotes')->findOrFail($movie->id);
         return view('movie-quotes', ['movie' => $movieWithQuotes]);
     }
 
