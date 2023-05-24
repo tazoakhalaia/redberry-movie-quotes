@@ -26,7 +26,7 @@
     @csrf
     <div class="w-1/4">
         <label for="title_en">{{ trans('profile.quote') }}</label>
-    <x-form-inputs name="title_en" type="text" placeholder="Title" />
+    <x-form-inputs name="title_en" type="text" placeholder="Title_en" />
         <label for="title_ka">{{ trans('profile.quote_ka') }}</label>
         <x-form-inputs name="title_ka" type="text" placeholder="Title_ka" />
         <label for="img">{{ trans('profile.image') }}</label>
@@ -38,7 +38,7 @@
         focus:outline-none
         focus:shadow-outline" name="movie_id">
             @foreach($movies as $movie)
-                <option value="{{ $movie->id }} ">{{ $movie->name }}</option>
+                <option value="{{ $movie->id }} ">{{ json_decode($movie->name, true)[app()->getLocale()]}} </option>
             @endforeach
         </select>
     </div>
@@ -50,6 +50,8 @@
     <div class="w-1/4">
         <label for="name">{{ trans('profile.movie_name') }}</label>
         <x-form-inputs name="name" type="text" placeholder="Name" label="MovieName" />
+        <label for="name">Movie Name in georgian</label>
+        <x-form-inputs name="name_ka" type="text" placeholder="Name" label="MovieName" />
     </div>
     <x-button class="bg-green-700 mb-5" type="submit" buttonName="{{ trans('profile.create_movie_name') }}" />
 </form>
@@ -61,7 +63,7 @@
 @foreach($quote as $quotes)
     <div class="border border-gray-600 rounded-md p-2.5 mt-4 flex justify-between mb-4">
     <div class="flex w-2/3 items-center">
-        <h1 class="font-bold"><span class="text-red-600">{{ trans('profile.movie_name') }} - </span> {{ $quotes->movie->name }}</h1>
+        <h1 class="font-bold"><span class="text-red-600">{{ trans('profile.movie_name') }} - </span> {{ json_decode($quotes->movie->name, true)[app()->getLocale()]}}</h1>
         <h1 class="ml-7 font-bold"><span class="text-red-600">{{ trans('profile.quote') }}:</span> {{ json_decode($quotes->title_en, true)[app()->getLocale()]}}</h1>
         <img class="ml-40 w-1/6" src="{{ asset('images/' . $quotes->img) }}" alt="pic">
 

@@ -15,6 +15,17 @@ class StoreMovieRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'name_ka' => 'required'
         ];
+    }
+
+    public function prepareForValidation()
+    {
+        $this->merge([ 
+            'name' => json_encode([
+                'en' => $this->name,
+                'ka' => $this->name_ka,
+            ]),
+        ]);
     }
 }

@@ -5,7 +5,7 @@ return [
     'password_label' => 'პაროლი',
     'email_label' => 'მეილი',
     'login' => 'შესვლა',
-    'quote' => 'ქვოტი',
+    'quote' => 'ქვოტი ინგლისურად',
     'quote_ka' => 'ქვოტი ქართულად',
     'image' => 'სურათი',
     'choose_movie' => 'არიჩიე ფილმი',
