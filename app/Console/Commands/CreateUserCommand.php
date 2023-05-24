@@ -10,14 +10,13 @@ use Illuminate\Support\Facades\Validator;
 
 class CreateUserCommand extends Command
 {
-    
     protected $signature = 'create:user';
 
     protected $description = 'Create New User';
 
     public function handle(): void
     {
-        
+
         $name = $this->ask('Enter your name');
         $email = $this->ask('Enter the user email');
         $password = $this->secret('Enter the user password:');
@@ -31,7 +30,7 @@ class CreateUserCommand extends Command
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:3',
         ]);
-    
+
         if ($validator->fails()) {
             $this->error('There were errors with your input:');
             foreach ($validator->errors()->all() as $error) {

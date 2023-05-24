@@ -10,7 +10,8 @@ class Quote extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    public function movie() : BelongsTo{
+    public function movie(): BelongsTo
+    {
         return $this->belongsTo(Movie::class);
     }
 }

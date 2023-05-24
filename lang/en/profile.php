@@ -1,4 +1,5 @@
 <?php
+
 return [
     'ka' => 'ka',
     'en' => 'en',
@@ -14,5 +15,4 @@ return [
     'logout' => 'Logout',
     'movie_name' => 'Movie Name',
     'quotes_for' => 'Quotes For'
-]
-?>
+];

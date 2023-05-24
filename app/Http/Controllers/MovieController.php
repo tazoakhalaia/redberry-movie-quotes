@@ -12,19 +12,22 @@ class MovieController extends Controller
     public function index(Movie $movie): View
     {
         $movieWithQuotes = Movie::with('quote')->findOrFail($movie->id);
-        return view('all-quotes', ['movie' => $movieWithQuotes]);
+        return view('movie-quotes', ['movie' => $movieWithQuotes]);
     }
 
-    public function store(StoreMovieRequest $request) : RedirectResponse{
+    public function store(StoreMovieRequest $request): RedirectResponse
+    {
         Movie::create($request->validated());
         return redirect()->route('quotes.index');
     }
 
-    public function edit(Movie $movie){
+    public function edit(Movie $movie)
+    {
         return view('movie-edit', ['movie' => $movie]);
     }
 
-    public function update(StoreMovieRequest $request, Movie $movie) : RedirectResponse{
+    public function update(StoreMovieRequest $request, Movie $movie): RedirectResponse
+    {
         $movie->update($request->validated());
         return redirect()->route('quotes.index');
     }

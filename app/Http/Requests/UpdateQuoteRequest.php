@@ -6,7 +6,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateQuoteRequest extends FormRequest
 {
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -22,13 +21,13 @@ class UpdateQuoteRequest extends FormRequest
 
     public function prepareForValidation()
     {
-       
-        $this->merge([ 
+
+        $this->merge([
             'title_en' => json_encode([
                 'en' => $this->title_en,
                 'ka' => $this->title_ka,
             ]),
         ]);
     }
-        
+
 }
