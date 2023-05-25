@@ -18,7 +18,7 @@
 <div class="m-auto mt-10">
 <h1 class="text-white text-5xl mt-20 capitalize">{{ json_decode($movie->name, true)[app()->getLocale()]}}</h1>
 <div> 
-    @foreach ($movie->quotes as $quote)
+    @foreach ($quotes as $quote)
         <div class="w-allMoviePicWidth bg-white rounded-lg h-allQuotesBoxHeight mt-20 overflow-hidden mb-6">
             <img class="w-allMoviePicWidth border border-black  h-allMoviePicheight" src="{{ asset('images/' . $quote->img) }}">
             <h2 class="mt-8 text-4xl ml-2">"{{ json_decode($quote->title_en, true)[app()->getLocale()]}}"</h2>
