@@ -18,7 +18,7 @@
 <div class="w-full flex justify-center items-center">
     <div class="text-center mt-40">
         <img class="w-moviePicWidth h-moviePicHeight m-auto rounded-md" src="{{ asset('images/' . $quote->img) }}">
-        <h1 class="text-center text-white font-bold text-5xl mt-16 mb-28">"{{ json_decode($quote->title_en, true)[app()->getLocale()]}}"</h1>
+        <h1 class="text-center text-white font-bold text-5xl mt-16 mb-28">"{{ json_decode($quote->title, true)[app()->getLocale()]}}"</h1>
         <a href="{{ route('movies.index', ['movie' => $quote->movie->id]) }}" class="text-white text-5xl underline capitalize">{{ json_decode($quote->movie->name, true)[app()->getLocale()]}}</a>
     </div>
 </div>

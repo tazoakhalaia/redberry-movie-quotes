@@ -14,7 +14,7 @@ class UpdateQuoteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title_en' => 'required',
+            'title' => 'required',
             'img' => 'nullable|image'
         ];
     }
@@ -23,7 +23,7 @@ class UpdateQuoteRequest extends FormRequest
     {
 
         $this->merge([
-            'title_en' => json_encode([
+            'title' => json_encode([
                 'en' => $this->title_en,
                 'ka' => $this->title_ka,
             ]),

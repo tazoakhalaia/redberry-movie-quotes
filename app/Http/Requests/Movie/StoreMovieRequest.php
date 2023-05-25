@@ -23,7 +23,7 @@ class StoreMovieRequest extends FormRequest
     {
         $this->merge([
             'name' => json_encode([
-                'en' => $this->name,
+                'en' => $this->name_en,
                 'ka' => $this->name_ka,
             ]),
         ]);

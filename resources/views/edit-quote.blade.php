@@ -17,9 +17,9 @@
         @csrf
         @method('put')
         <label for="title_en" class="mt-2">{{ trans('quote-edit.quote_in_english') }}</label>
-        <input class="block p-2 rounded-md border border-gray-300 outline-none" name="title_en" type="text" value="{{ json_decode($quote->title_en, true)['en'] }}">
+        <input class="block p-2 rounded-md border border-gray-300 outline-none" name="title_en" type="text" value="{{ json_decode($quote->title, true)['en'] }}">
         <label for="title_ka">{{ trans('quote-edit.quote_in_georgian') }}</label>
-        <input class="block p-2 rounded-md border border-gray-300 outline-none" name="title_ka" type="text" value="{{ json_decode($quote->title_en, true)['ka'] }}">
+        <input class="block p-2 rounded-md border border-gray-300 outline-none" name="title_ka" type="text" value="{{ json_decode($quote->title, true)['ka'] }}">
         <input class="mt-4" type="file" name="img">
         <img class="w-1/6 mt-4" src="{{ asset('images/' . $quote->img) }}" alt="Quote Image">
         <x-button class="bg-green-700 mt-4" type="submit" buttonName="{{ trans('quote-edit.update') }}" />

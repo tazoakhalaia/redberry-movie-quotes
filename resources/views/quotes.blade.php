@@ -59,7 +59,7 @@
     @csrf
     <div class="w-1/2">
         <label for="name">{{ trans('profile.movie_name') }}</label>
-        <x-form-inputs name="name" type="text" placeholder="Name" label="MovieName" />
+        <x-form-inputs name="name_en" type="text" placeholder="Name" label="MovieName" />
         <label for="name">{{ trans('admin-page.movie_name') }}</label>
         <x-form-inputs name="name_ka" type="text" placeholder="Name in georgian" label="MovieName" />
     </div>
@@ -71,7 +71,7 @@
     <div class="border border-gray-600 mt-4 flex justify-between mb-4">
     <div class="flex w-2/3 items-center">
         <h1 class="font-bold text-sm"><span class="text-red-600">{{ trans('profile.movie_name') }} - </span> {{ json_decode($quotes->movie->name, true)[app()->getLocale()]}}</h1>
-        <h1 class="ml-7 font-bold text-sm"><span class="text-red-600">{{ trans('profile.quote') }}:</span> {{ json_decode($quotes->title_en, true)[app()->getLocale()]}}</h1>
+        <h1 class="ml-7 font-bold text-sm"><span class="text-red-600">{{ trans('profile.quote') }}:</span> {{ json_decode($quotes->title, true)[app()->getLocale()]}}</h1>
         <img class="ml-40 w-20" src="{{ asset('images/' . $quotes->img) }}" alt="pic">
 
     </div>
