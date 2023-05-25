@@ -60,7 +60,7 @@
     <div class="w-1/2">
         <label for="name">{{ trans('profile.movie_name') }}</label>
         <x-form-inputs name="name" type="text" placeholder="Name" label="MovieName" />
-        <label for="name">Movie Name in georgian</label>
+        <label for="name">{{ trans('admin-page.movie_name') }}</label>
         <x-form-inputs name="name_ka" type="text" placeholder="Name in georgian" label="MovieName" />
     </div>
     <x-button class="bg-blue-500 mb-5" type="submit" buttonName="{{ trans('profile.create_movie_name') }}" />
