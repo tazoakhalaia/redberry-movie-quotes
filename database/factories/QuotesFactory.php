@@ -21,7 +21,7 @@ class QuotesFactory extends Factory
     {
         return [
             'id' => $this->faker->unique()->randomNumber(),
-            'title_en' => json_encode([
+            'title' => json_encode([
                 'en' => $this->faker->word,
                 'ka' => $this->faker->word
             ]),

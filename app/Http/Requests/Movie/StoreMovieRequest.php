@@ -15,7 +15,6 @@ class StoreMovieRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'name_ka' => 'required'
         ];
     }
 
