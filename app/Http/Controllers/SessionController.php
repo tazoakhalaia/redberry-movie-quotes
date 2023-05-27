@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
-    public function login(LoginRequest $request) : RedirectResponse
+    public function login(LoginRequest $request): RedirectResponse
     {
-        
+
         if(Auth::attempt($request->validated())) {
             return redirect()->route('quotes.index');
         } else {
@@ -18,7 +18,8 @@ class SessionController extends Controller
         }
     }
 
-    public function logout() : RedirectResponse {
+    public function logout(): RedirectResponse
+    {
         Auth::logout();
         return redirect()->route('login');
     }

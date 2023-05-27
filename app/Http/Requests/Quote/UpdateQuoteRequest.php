@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Quote;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateQuoteRequest extends FormRequest
 {
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -15,20 +14,20 @@ class UpdateQuoteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title_en' => 'required',
+            'title' => 'required',
             'img' => 'nullable|image'
         ];
     }
 
     public function prepareForValidation()
     {
-       
-        $this->merge([ 
-            'title_en' => json_encode([
+
+        $this->merge([
+            'title' => json_encode([
                 'en' => $this->title_en,
                 'ka' => $this->title_ka,
             ]),
         ]);
     }
-        
+
 }

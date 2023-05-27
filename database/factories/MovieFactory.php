@@ -3,32 +3,27 @@
 namespace Database\Factories;
 
 use App\Models\Movie;
-use App\Models\Quote;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Quote>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Movie>
  */
-class QuotesFactory extends Factory
+class MovieFactory extends Factory
 {
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
-    protected $model = Quote::class;
+    protected $model = Movie::class;
     public function definition(): array
     {
         return [
             'id' => $this->faker->unique()->randomNumber(),
-            'title' => json_encode([
+            'name' => json_encode([
                 'en' => $this->faker->word,
                 'ka' => $this->faker->word
             ]),
-            'img' => $this->faker->imageUrl,
-            'movie_id' => function () {
-                return Movie::factory()->create()->id;
-            },
         ];
     }
 }

@@ -14,6 +14,7 @@ class StoreQuoteRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'title' => 'required',
             'title_en' => 'required',
             'title_ka' => 'required',
             'img' => 'required',
@@ -22,8 +23,8 @@ class StoreQuoteRequest extends FormRequest
     }
     public function prepareForValidation()
     {
-        $this->merge([ 
-            'title_en' => json_encode([
+        $this->merge([
+            'title' => json_encode([
                 'en' => $this->title_en,
                 'ka' => $this->title_ka,
             ]),
