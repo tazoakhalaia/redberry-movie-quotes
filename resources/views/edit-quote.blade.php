@@ -9,9 +9,9 @@
     <title>Edit</title>
 </head>
 <body class="bg-gradient-to-r from-gray-200 via-blue-100 to-blue-300">
-<div class="mt-2 mb-4">
-        <a href="{{ route('quotes.edit', ['quote' => $quote->id, 'lang' => 'en']) }}"><button class="ml-4 border border-red-500 rounded-md">{{ trans("profile.en") }}</button></a>
-        <a href="{{ route('quotes.edit', ['quote' => $quote->id, 'lang' => 'ka']) }}"><button class="ml-4 border border-blue-500 rounded-md">{{ trans("profile.ka") }}</button></a>
+<div class="mt-2 mb-4 flex">
+        <a href="{{ route('quotes.edit', ['quote' => $quote->id, 'lang' => 'ka']) }}"><img class="w-8" src="{{ asset('images/georgia.jpg') }}"></a>
+        <a href="{{ route('quotes.edit', ['quote' => $quote->id, 'lang' => 'en']) }}"><img class="w-10 ml-2" src="{{ asset('images/english.png') }}"></a>
     </div>
     <form action ="{{ route('quotes.update', ['quote' => $quote->id]) }}"method="POST" enctype="multipart/form-data">
         @csrf

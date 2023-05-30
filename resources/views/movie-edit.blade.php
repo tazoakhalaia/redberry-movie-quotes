@@ -10,9 +10,9 @@
 </head>
 <body class="min-h-screen flex justify-center items-center bg-gradient-to-r from-white via-slate-400 to-sky-100">
     <div>
-<div class="mt-2 mb-4">
-        <a href="{{ route('movies.edit', ['movie' => $movie->id, 'lang' => 'en']) }}"><button class="border border-red-500 rounded-md text-black">{{ trans("profile.en") }}</button></a>
-        <a href="{{ route('movies.edit', ['movie' => $movie->id, 'lang' => 'ka']) }}"><button class="ml-2 border border-blue-500 rounded-md text-black">{{ trans("profile.ka") }}</button></a>
+<div class="mt-2 mb-4 flex">
+        <a href="{{ route('movies.edit', ['movie' => $movie->id, 'lang' => 'en']) }}"><img class="w-10" src="{{ asset('images/english.png') }}"></a>
+        <a href="{{ route('movies.edit', ['movie' => $movie->id, 'lang' => 'ka']) }}"><img class="w-8 ml-2" src="{{ asset('images/georgia.jpg') }}"></a>
     </div>
 <form action ="{{ route('movies.update', ['movie' => $movie->id]) }}"method="POST">
     @csrf
