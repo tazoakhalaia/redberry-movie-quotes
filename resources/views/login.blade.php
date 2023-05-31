@@ -11,15 +11,15 @@
 <body class="min-h-screen flex justify-center items-center">
 <div>
     <div class="flex">
-        <a href="{{ route('login', ['lang' => 'ka']) }}" class="border rounded-md"><button>{{ trans("profile.ka") }}</button></a>
-        <a href="{{ route('login', ['lang' => 'en']) }}" class="border rounded-md ml-2.5"><button>{{ trans("profile.en") }}</button></a>
+        <a href="{{ route('login', ['lang' => 'ka']) }}"><img class="w-8" src="{{ asset('images/georgia.jpg') }}"></a>
+        <a href="{{ route('login', ['lang' => 'en']) }}" class="ml-3"><img class="w-10" src="{{ asset('images/english.png') }}"></a>
     </div>
     @if (session('error'))
         <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">{{ session('error') }}</div>
     @endif
     <form method="post" action="{{ route('signup') }}">
         @csrf
-        <label for="password">{{ trans("profile.email_label") }}</label>
+        <label for="email">{{ trans("profile.email_label") }}</label>
         <x-form-inputs type="email" name="email" placeholder="Email" />
         <label for="password">{{ trans("profile.password_label") }}</label>
         <x-form-inputs type="password" name="password" placeholder="Password" />

@@ -19,9 +19,9 @@
     </div>
 @endif
 <div class="flex ml-2 justify-between">
-    <div class="flex">
-    <a href="{{ route('quotes.index', ['lang' => 'ka']) }}" class="border rounded-md bg-blue-500 p-2"><button>{{ trans("profile.ka") }}</button></a>
-    <a href="{{ route('quotes.index', ['lang' => 'en']) }}" class="border rounded-md ml-2.5 bg-red-700 p-2"><button>{{ trans("profile.en") }}</button></a>
+    <div class="flex mt-2">
+    <a href="{{ route('quotes.index', ['lang' => 'ka']) }}"><img class="w-8" src="{{ asset('images/georgia.jpg') }}"></a>
+    <a href="{{ route('quotes.index', ['lang' => 'en']) }}" class="ml-2.5"><img class="w-10" src="{{ asset('images/english.png') }}"></a>
     </div>
     <form action="{{ route('logout') }}" method="POST">
     @csrf
